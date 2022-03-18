@@ -5,15 +5,6 @@ const Library = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text>Bibliothèque</Text>
-      <Button
-        title="Go to Result"
-        // onPress={() => navigation.navigate('Result')}
-      />
-      <Button
-        title="Go to Library... again"
-        // onPress={() => navigation.push('Library')}
-      />
-
     </View>
   )
 }
