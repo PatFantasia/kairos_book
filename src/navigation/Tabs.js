@@ -1,8 +1,10 @@
 import React from 'react';
-import {StyleSheet} from 'react-native'
+import {StyleSheet, Button} from 'react-native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import { Icon } from 'react-native-elements';
+import { getHeaderTitle } from '@react-navigation/elements';
 import {BlurView} from 'expo-blur';
+
+import { Icon } from 'react-native-elements';
 
 import {News} from '../screens';
 import {Library} from '../screens';
@@ -32,11 +34,27 @@ const Tabs = () => {
               color = {focused? "blue" : "grey"}
             />
           ),
+
           tabBarStyle: {position: "absolute"},
-          tabBarBackground: () => (
-            <BlurView tint="dark" intensity={100} style={StyleSheet.absoluteFill} />
-          ),
-          
+          tabBarActiveTintColor : "grey",
+          tabBarStyle: {
+            position: 'absolute',
+            backgroundColor: 'transparent',
+          },
+          tabBarHideOnKeyboard: true,
+          tabBarItemStyle: {
+            backgroundColor: "transparent",
+            borderColor: "red"
+          },
+          tabBarIconStyle: {
+            backgroundColor: "transparent",
+            borderColor: "red"
+          },
+          tabBarLabelStyle: {
+            backgroundColor: "transparent",
+            backfaceVisibility: "hidden",
+            borderColor: "red"
+          }, 
 
        
         })
