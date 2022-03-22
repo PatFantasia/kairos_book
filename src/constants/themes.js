@@ -41,6 +41,6 @@ export const SIZES = {
     body4: 14,
 
     // app dimensions
-    width,
-    height
+    // width,
+    // height
 };

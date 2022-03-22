@@ -4,6 +4,7 @@ import Bookstore from './Bookstore';
 import Audiobook from './Audiobook';
 import Search from './Search';
 import Profile from './Profile';
+import OnboardingScreen from './OnboardingScreen';
 
 
-export {News, Library, Bookstore, Audiobook, Search, Profile};
+export {News, Library, Bookstore, Audiobook, Search, Profile, OnboardingScreen};
