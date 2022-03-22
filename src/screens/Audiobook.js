@@ -1,20 +1,19 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View, Button } from "react-native";
 
-
-const Audiobook = ({navigation}) => {
+const Audiobook = () => {
   return (
-    <View style={styles.container} >
+    <View style={styles.container}>
       <Text>Livres Audio</Text>
     </View>
-  )
-}
+  );
+};
 
 export default Audiobook;
 const styles = StyleSheet.create({
-    container: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center' 
-    }
-})
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});

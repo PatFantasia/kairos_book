@@ -3,8 +3,7 @@ export const onboardingPicture_two = require("../../assets/images/onboardingPict
 export const onboardingPicture_three = require("../../assets/images/onboardingPicture_three.png");
 
 export default {
-    onboardingPicture_one,
-    onboardingPicture_two,
-    onboardingPicture_three
-    
-}
+  onboardingPicture_one,
+  onboardingPicture_two,
+  onboardingPicture_three,
+};
