@@ -1,15 +1,16 @@
 {
   "env": {
     "browser": true,
-    "es2021": true,
-    "react-native/react-native": true
+    "es2021": true
+    // "react-native/react-native": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended",
+    // "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -19,7 +20,22 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "react-native", "react-hooks", "@typescript-eslint"],
+  // "options": {
+  //   "prettier/prettier": [
+  //     "error",
+  //     {},
+  //     {
+  //       "usePrettierrc": false
+  //     }
+  //   ]
+  // },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "react-native",
+    "prettier"
+  ],
   "rules": {
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 1,
@@ -28,6 +44,13 @@
     "react-native/no-raw-text": 0,
     "react-native/no-single-element-style-arrays": 1,
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }
