@@ -12,7 +12,7 @@ import { SIZES, COLORS } from "../constants/themes";
 const OnboardingScreen = ({ navigation }) => {
   return (
     <Onboarding
-      onDone={() => navigation.navigate("SingUp0")}
+      onDone={() => navigation.navigate("SingUp")}
       imageContainerStyles={styles.imgBox}
       titleStyles={styles.mainText}
       subTitleStyles={styles.subText}
