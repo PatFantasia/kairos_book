@@ -35,21 +35,25 @@ const Tabs = () => {
         tabBarActiveTintColor: "grey",
         tabBarStyle: {
           position: "absolute",
-          backgroundColor: "transparent",
+          backgroundColor: "white",
+          opacity: 0.8,
         },
         tabBarHideOnKeyboard: true,
         tabBarItemStyle: {
-          backgroundColor: "transparent",
-          borderColor: "red",
+          // backgroundColor: "transparent",
+          // borderColor: "red",
         },
         tabBarIconStyle: {
-          backgroundColor: "transparent",
-          borderColor: "red",
+          // backgroundColor: "transparent",
+          // borderColor: "red",
         },
         tabBarLabelStyle: {
-          backgroundColor: "transparent",
-          backfaceVisibility: "hidden",
-          borderColor: "red",
+          // backgroundColor: "transparent",
+          // backfaceVisibility: "hidden",
+          // borderColor: "red",
+        },
+        headerStyle: {
+          backgroundColor: "black",
         },
       })}
     >
