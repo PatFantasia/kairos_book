@@ -1,19 +1,9 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  View,
-  SafeAreaView,
-  Dimensions,
-  TouchableOpacity,
-  TextInput,
-  Button,
-} from "react-native";
-import { Icon, SearchBar, Text } from "react-native-elements";
+import { StyleSheet, View, SafeAreaView, Text } from "react-native";
+import { Icon, SearchBar, Divider } from "react-native-elements";
+import { COLORS, SIZES } from "constants/themes";
 
-const { width: WIDTH, height: HEIGHT } = Dimensions.get("window");
-
-const Search = ({ navigation }) => {
-  // const {container, mainBoxes_wrapper, searchBar_wrapper, customText_inputBox, iconStyle} = styles;
+const Search = () => {
   const [search, setSearch] = useState({ keywords: " Votre bibliothèque" });
 
   const handleChangeText = (value) => {
@@ -22,18 +12,17 @@ const Search = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <SearchBar
-        ref={(search) => (search = search)}
+        // ref={(search) => (search = search)}
         cancelButtonTitle="Annuler"
         onChangeText={handleChangeText}
         value={search.keywords}
-        containerStyle={styles.searchBar_wrapper2}
-        // inputStyle={styles.customText_inputBox}
-        // cancelButtonProps={{}}
+        containerStyle={styles.searchBar_wrapper}
         showCancel
-        onCancel={() => {}}
+        // onCancel={() => {}}
       />
+      <Divider style={{ marginHorizontal: 15 }} color={COLORS.lightGray} />
+
       <View style={styles.defaultContent}>
-        {/* <Text>Recherche dans la Bibliothèque</Text> */}
         <Icon
           name="wifi-off"
           type="feather"
@@ -42,7 +31,14 @@ const Search = ({ navigation }) => {
           containerStyle={{ top: -10 }}
         />
         <Text h4>Vous êtes hors ligne</Text>
-        <Text style={{ paddingHorizontal: 4, textAlign: "center" }} h5>
+        <Text
+          style={{
+            paddingHorizontal: 4,
+            textAlign: "center",
+            fontSize: SIZES.h4,
+            color: COLORS.white,
+          }}
+        >
           Recherche effectuée dans votre Bibliothèque uniquement.
         </Text>
       </View>
@@ -57,59 +53,19 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-start",
   },
-  mainBoxes_wrapper: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    paddingHorizontal: 5,
-  },
+
   searchBar_wrapper: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    // padding: 10,
-    // position: "absolute",
-    // top: 20,
     borderRadius: 8,
-    width: WIDTH - WIDTH * 0.25,
     backgroundColor: "#fff",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.5,
     shadowRadius: 5,
-    // elevation: 10,
-  },
-  searchBar_wrapper2: {
-    // flexDirection: 'row',
-    // justifyContent: 'space-between',
-    // alignItems: 'center',
-    // padding: 10,
-    // position: "absolute",
-    // top: 20,
-    borderRadius: 8,
-    // width : WIDTH - (WIDTH * 0.25),
-    backgroundColor: "#fff",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
-    // elevation: 10,
     borderBottomColor: "transparent",
     borderTopColor: "transparent",
   },
-  customText_inputBox: {
-    fontSize: 14,
-    color: "#303030",
-    // maxWidth: '70%',
-    // minWidth: '30%',
-    // fontFamily: 'Poppins'
-  },
-  customText_button: {
-    fontSize: 16,
-    paddingTop: 2,
-  },
   defaultContent: {
-    // flexDirection: 'row',
     alignItems: "center",
-    bottom: -(HEIGHT / 2.5),
+    bottom: -(SIZES.HEIGHT / 2.5),
   },
 });

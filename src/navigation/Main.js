@@ -8,7 +8,6 @@ import { Profile } from "../screens/";
 import { OnboardingScreen } from "../screens/";
 import SingUp from "../screens/SingUp";
 import { COLORS, SIZES } from "constants/themes";
-// import { SIZES,  } from "../constants";
 
 const Stack = createStackNavigator();
 
@@ -43,7 +42,7 @@ const Main = () => {
           },
         }}
       >
-        {/* <Stack.Screen
+        <Stack.Screen
           name="OnboardingScreen"
           component={OnboardingScreen}
           options={{ headerShown: false }}
@@ -52,7 +51,7 @@ const Main = () => {
           name="SingUp"
           component={SingUp}
           options={{ headerShown: false }}
-        /> */}
+        />
         <Stack.Screen
           name="Tabs"
           component={Tabs}

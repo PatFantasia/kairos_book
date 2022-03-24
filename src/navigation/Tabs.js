@@ -31,7 +31,6 @@ const Tabs = () => {
             color={focused ? "blue" : "grey"}
           />
         ),
-
         tabBarActiveTintColor: "grey",
         tabBarStyle: {
           position: "absolute",
@@ -39,19 +38,6 @@ const Tabs = () => {
           opacity: 0.8,
         },
         tabBarHideOnKeyboard: true,
-        tabBarItemStyle: {
-          // backgroundColor: "transparent",
-          // borderColor: "red",
-        },
-        tabBarIconStyle: {
-          // backgroundColor: "transparent",
-          // borderColor: "red",
-        },
-        tabBarLabelStyle: {
-          // backgroundColor: "transparent",
-          // backfaceVisibility: "hidden",
-          // borderColor: "red",
-        },
         headerStyle: {
           backgroundColor: "black",
         },

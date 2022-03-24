@@ -1,10 +1,16 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { COLORS, SIZES } from "constants/themes";
+import { Divider } from "react-native-elements";
 
 const Audiobook = () => {
   return (
     <View style={styles.container}>
-      <Text>Livres Audio</Text>
+      <Divider style={{ marginHorizontal: 15 }} color={COLORS.lightGray} />
+
+      <Text style={{ fontSize: SIZES.h2, color: COLORS.white }}>
+        Livres Audio
+      </Text>
     </View>
   );
 };
@@ -15,5 +21,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: COLORS.black,
   },
 });

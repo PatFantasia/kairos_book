@@ -1,25 +1,37 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { Text, View, SafeAreaView, TouchableOpacity } from "react-native";
+import { Icon, Divider } from "react-native-elements";
+import { COLORS, FONTS, SIZES } from "../constants/themes";
 
 const Bookstore = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Librairie</Text>
+  const displayListOfTopics = () => {
+    return (
+      <TouchableOpacity
+        style={{
+          flex: 1,
+          flexDirection: "row",
+          paddingHorizontal: SIZES.padding,
+          top: -70,
+          alignItems: "center",
+          // alignSelf: "flex-start",
+        }}
+      >
+        <Icon name="menu" type="feather" color={COLORS.white} />
+        <Text style={{ ...FONTS.h3, color: COLORS.white }}>
+          {" "}
+          Parcourir les sections{" "}
+        </Text>
+      </TouchableOpacity>
+    );
+  };
 
-      <Button
-        title="Go Back"
-        // onPress={() => navigation.goBack()}
-      />
-    </View>
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black }}>
+      <Divider style={{ marginHorizontal: 15 }} color={COLORS.lightGray} />
+      <View style={{ height: 200 }}>{displayListOfTopics()}</View>
+      <Divider style={{ marginHorizontal: 15 }} color={COLORS.lightGray} />
+    </SafeAreaView>
   );
 };
 
 export default Bookstore;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

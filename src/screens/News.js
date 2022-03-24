@@ -1,20 +1,25 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-
-
-const News = ({navigation}) => {
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { COLORS, SIZES } from "constants/themes";
+import { Divider } from "react-native-elements";
+const News = () => {
   return (
-    <View style={styles.container} >
-        <Text>Aujourd'hui</Text>
+    <View style={styles.container}>
+      <Divider style={{ marginHorizontal: 15 }} color={COLORS.lightGray} />
+
+      <Text style={{ fontSize: SIZES.h2, color: COLORS.white }}>
+        {"Aujourd'hui"}
+      </Text>
     </View>
-  )
-}
+  );
+};
 
 export default News;
 const styles = StyleSheet.create({
-    container: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center' 
-    }
-})
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: COLORS.black,
+  },
+});

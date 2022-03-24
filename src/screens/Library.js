@@ -1,20 +1,28 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
-const Library = ({navigation}) => {
+import { COLORS, SIZES } from "constants/themes";
+import { Divider } from "react-native-elements";
+
+const Library = () => {
   return (
     <View style={styles.container}>
-      <Text>Bibliothèque</Text>
+      <Divider style={{ marginHorizontal: 15 }} color={COLORS.lightGray} />
+
+      <Text style={{ fontSize: SIZES.h2, color: COLORS.white }}>
+        Bibliothèque
+      </Text>
     </View>
-  )
-}
+  );
+};
 
 export default Library;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center' 
-    }
-})
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: COLORS.black,
+  },
+});
