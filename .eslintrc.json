@@ -34,7 +34,8 @@
     "react-hooks",
     "@typescript-eslint",
     "react-native",
-    "prettier"
+    "prettier",
+    "module-resolver"
   ],
   "rules": {
     "react-native/no-unused-styles": 2,
@@ -52,6 +53,7 @@
       {
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "module-resolver/use-alias": 1
   }
 }
