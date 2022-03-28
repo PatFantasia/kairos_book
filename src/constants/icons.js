@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/*global require()*/
 /*eslint no-undef: "off"*/
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
