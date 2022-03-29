@@ -2923,6 +2923,11 @@ eslint-plugin-import@^2.14.0:
     resolve "^1.20.0"
     tsconfig-paths "^3.12.0"
 
+eslint-plugin-module-resolver@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-module-resolver/-/eslint-plugin-module-resolver-1.4.0.tgz#f491e1a51d9ea9f7267163bb5e58a333e81132ee"
+  integrity sha512-B3fZRHrB39gkADPAEAhfvSm34qpn5Tq0CGZjWfoFvU0vODa3po3Sx2CTd3XESXUgEUvIbOdn21nhoq7zGX0aPQ==
+
 eslint-plugin-prettier@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-4.0.0.tgz#8b99d1e4b8b24a762472b4567992023619cb98e0"
