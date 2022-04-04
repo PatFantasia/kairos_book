@@ -3,11 +3,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { Icon } from "react-native-elements";
 
-import { News } from "../screens";
-import { Library } from "../screens";
-import { Bookstore } from "../screens";
-import { Audiobook } from "../screens";
-import { Search } from "../screens";
+import { News } from "screens";
+import { Library } from "screens";
+import { Bookstore } from "screens";
+import { Audiobook } from "screens";
+import { Search } from "screens";
+import { COLORS } from "constants";
 
 const Tab = createBottomTabNavigator();
 const config = {
@@ -34,12 +35,8 @@ const Tabs = () => {
         tabBarActiveTintColor: "grey",
         tabBarStyle: {
           position: "absolute",
-          backgroundColor: "white",
+          backgroundColor: COLORS.white,
           opacity: 0.8,
-        },
-        tabBarHideOnKeyboard: true,
-        headerStyle: {
-          backgroundColor: "black",
         },
       })}
     >
