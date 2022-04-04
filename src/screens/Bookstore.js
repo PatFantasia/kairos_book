@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import {
   View,
+  Text,
   StyleSheet,
   SafeAreaView,
   StatusBar,
   ScrollView,
 } from "react-native";
 import { Divider } from "react-native-elements";
-import { COLORS } from "../constants/themes";
+import { COLORS, SIZES } from "../constants/themes";
 // import dummyData from "constants/dummyData";
 import {
   myBooksData,
@@ -18,7 +19,7 @@ import RenderFancyContent from "components/RenderFancyContent";
 import DisplaySection from "components/DisplaySection";
 import DisplayAll from "components/DisplayAll";
 import RenderTrendContent from "components/RenderTrendContent";
-import RenderByGenre from "components/RenderByGenre";
+import RenderByType from "components/RenderByType";
 import SeeMore from "components/SeeMore";
 
 const Bookstore = ({ navigation }) => {
@@ -26,33 +27,33 @@ const Bookstore = ({ navigation }) => {
   const [fancyCategories, setFancyCategories] = useState(fancyCategoriesData);
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <View style={{ height: 200 }}>
-          <Divider style={{ marginHorizontal: 15 }} color={COLORS.lightGray} />
-          <DisplaySection />
-        </View>
+      <ScrollView style={{ top: 50 }}>
+        <Text
+          style={{
+            color: COLORS.white,
+            fontSize: SIZES.h1,
+            fontWeight: "bold",
+            marginHorizontal: 15,
+          }}
+        >
+          Librairie
+        </Text>
+        <Divider
+          style={{ marginHorizontal: 15, marginVertical: 10 }}
+          color={COLORS.lightGray}
+        />
+        <DisplaySection />
 
-        <View style={{ height: 380, top: -150 }}>
-          <RenderFancyContent data={fancyCategories} />
-        </View>
         <RenderFancyContent data={fancyCategories} navigation={navigation} />
 
-        <View style={{ height: 550, top: -150 }}>
-          <RenderTrendContent data={bookData} />
-        </View>
+        <RenderTrendContent data={bookData} />
 
-        <View style={{ height: 200, top: -150 }}>
-          <Divider style={{ marginHorizontal: 15 }} color={COLORS.lightGray} />
-          <DisplayAll />
-        </View>
+        <Divider style={{ marginHorizontal: 15 }} color={COLORS.lightGray} />
+        <DisplayAll />
 
-        <View style={{ height: 550, top: -150 }}>
-          <RenderByGenre data={bookData} />
-        </View>
+        <RenderByType data={bookData} />
 
-        <View style={{ top: -320 }}>
-          <SeeMore data={bookData} />
-        </View>
+        <SeeMore data={bookData} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -63,6 +64,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.black,
-    marginTop: StatusBar.currentHeight || 0,
+    marginTop: StatusBar.currentHeight,
   },
 });
