@@ -13,19 +13,19 @@ import { Icon, Divider } from "react-native-elements";
 
 import { COLORS, SIZES } from "../constants/themes";
 
-const RenderByGenre = ({ data }) => {
+const RenderByType = ({ data, navigation }) => {
   const renderSection = (data) => {
     const renderContent = ({ item }) => (
       <TouchableOpacity
         style={{
-          marginRight: SIZES.padding,
+          marginLeft: 15,
           borderTopColor: COLORS.lightGray,
         }}
-        // onPress={() =>
-        //   navigation.navigate("FancyContent", {
-        //     content: item,
-        //   })
-        // }
+        onPress={() =>
+          navigation.navigate("FancyContent", {
+            book: item,
+          })
+        }
       >
         <Image
           source={item.bookCover}
@@ -43,14 +43,14 @@ const RenderByGenre = ({ data }) => {
       </TouchableOpacity>
     );
     return (
-      <View>
+      <View style={{ marginTop: 25 }}>
         <LinearGradient
           colors={[COLORS.gray, COLORS.black]}
           //   style={{ flex: 1, borderRadius: 20, opacity: 0.1 }}
         >
           <View
             style={{
-              marginLeft: 5,
+              marginLeft: 15,
               marginTop: 30,
               // marginBottom: 5,
               height: 30,
@@ -75,7 +75,7 @@ const RenderByGenre = ({ data }) => {
   return renderSection(data);
 };
 
-export default RenderByGenre;
+export default RenderByType;
 
 const styles = StyleSheet.create({
   primaryTitle: {

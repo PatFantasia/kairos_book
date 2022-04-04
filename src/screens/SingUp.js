@@ -24,11 +24,6 @@ const SignInScreen = ({ navigation }) => {
   });
   const { getItem, setItem } = useAsyncStorage("login", data);
 
-  const readDataFromStorage = async () => {
-    const item = await getItem();
-    console.log("local login data", item);
-  };
-
   const writeDataToStorage = async (loginData) => {
     try {
       await setItem(loginData);
@@ -39,8 +34,13 @@ const SignInScreen = ({ navigation }) => {
   };
 
   useEffect(() => {
+    const readDataFromStorage = async () => {
+      const item = await getItem();
+      console.log("local login data", item);
+    };
+
     readDataFromStorage();
-  }, []);
+  }, [getItem]);
   const textInputChange = (val) => {
     if (val.length !== 0) {
       setData({
@@ -103,7 +103,7 @@ const SignInScreen = ({ navigation }) => {
       </View>
       <View style={styles.footer}>
         <ScrollView>
-          <Text style={styles.text_footer}>Nom d'utilisateur</Text>
+          <Text style={styles.text_footer}>Nom d&apos;utilisateur</Text>
           <View style={styles.action}>
             <Icon name="user" type="feather" color="#05375a" size={20} />
             <TextInput
@@ -183,7 +183,7 @@ const SignInScreen = ({ navigation }) => {
             </Text>
             <Text style={[styles.color_textPrivate, { fontWeight: "bold" }]}>
               {" "}
-              conditions générales d'utilisations{" "}
+              conditions générales d&apos;utilisations{" "}
             </Text>
             <Text style={styles.color_textPrivate}> et de</Text>
             <Text style={[styles.color_textPrivate, { fontWeight: "bold" }]}>
@@ -205,7 +205,7 @@ const SignInScreen = ({ navigation }) => {
                     },
                   ]}
                 >
-                  S'inscrire
+                  S&apos;inscrire
                 </Text>
               </LinearGradient>
             </TouchableOpacity>

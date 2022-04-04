@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
-  Animated,
 } from "react-native";
 import { FONTS, COLORS, SIZES, icons } from "constants";
 import { immigritude, myBooksData } from "constants/dummyData";
@@ -17,12 +16,13 @@ import BuyItem from "./BuyItem";
 import Options from "./Options";
 import MetaInfo from "./MetaInfo";
 import AuthorBooks from "./AuthorBooks";
+import TypeMenu from "./TypeMenu";
 
 const LibraryItemContent = ({ route, navigation }) => {
-  const [book, setBook] = React.useState(immigritude);
+  const [book, setBook] = React.useState(null);
 
   React.useEffect(() => {
-    // let { book } = route.params;
+    let { book } = route.params;
     setBook(book);
   }, [book]);
 
@@ -175,6 +175,23 @@ const LibraryItemContent = ({ route, navigation }) => {
         {/* Book Cover Section */}
         <View style={{ flex: 1 }}>{renderBookInfoSection()}</View>
         <AuthorBooks data={myBooksData} title={"Plus de livres de : "} />
+        <View style={{ marginLeft: 15, marginVertical: 25 }}>
+          <TouchableOpacity>
+            <Text style={{ fontSize: SIZES.h1, color: COLORS.white }}>
+              {" "}
+              Genres
+            </Text>
+          </TouchableOpacity>
+          <TypeMenu iconName={"typewriter"} bookType="Romans et littératures" />
+          <TypeMenu
+            iconName={"smoking-pipe"}
+            bookType="Policier et suspenses"
+          />
+          <TypeMenu iconName={"candle"} bookType="Religion et spiritualité" />
+          <TypeMenu iconName={"flower-poppy"} bookType="Romance" />
+          <TypeMenu iconName={"lightbulb"} bookType="BD et livre jeunesse " />
+          <TypeMenu iconName={"menu"} bookType="Tous les genres" />
+        </View>
       </ScrollView>
     );
   } else {

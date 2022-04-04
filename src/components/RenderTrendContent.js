@@ -13,7 +13,7 @@ import { Icon, Divider } from "react-native-elements";
 
 import { COLORS, SIZES } from "../constants/themes";
 
-const RenderTrendContent = ({ data }) => {
+const RenderTrendContent = ({ data, navigation }) => {
   const renderSection = (data) => {
     const renderContent = ({ item }) => (
       <TouchableOpacity
@@ -21,11 +21,11 @@ const RenderTrendContent = ({ data }) => {
           marginRight: SIZES.padding,
           borderTopColor: COLORS.lightGray,
         }}
-        // onPress={() =>
-        //   navigation.navigate("FancyContent", {
-        //     content: item,
-        //   })
-        // }
+        onPress={() =>
+          navigation.navigate("FancyContent", {
+            book: item,
+          })
+        }
       >
         <Image
           source={item.bookCover}
@@ -42,14 +42,14 @@ const RenderTrendContent = ({ data }) => {
       </TouchableOpacity>
     );
     return (
-      <View>
+      <View style={{ marginTop: 40 }}>
         <LinearGradient
           colors={[COLORS.lightGray, COLORS.black]}
           //   style={{ flex: 1, borderRadius: 20, opacity: 0.1 }}
         >
           <View
             style={{
-              marginLeft: 5,
+              marginLeft: 15,
               marginTop: 30,
               // marginBottom: 5,
               height: 30,
@@ -66,7 +66,7 @@ const RenderTrendContent = ({ data }) => {
             horizontal
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ paddingVertical: 20 }}
+            contentContainerStyle={{ marginLeft: 15, paddingVertical: 20 }}
           >
             <FlatList
               scrollEnabled={false}

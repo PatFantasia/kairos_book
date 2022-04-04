@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     paddingHorizontal: SIZES.padding,
-    top: -75,
+    // top: -75,
     alignItems: "center",
   },
 });

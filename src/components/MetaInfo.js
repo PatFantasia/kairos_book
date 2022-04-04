@@ -8,7 +8,7 @@ const MetaInfo = ({ book }) => {
   const { genre, release_date, language, pageNo, publishing_house, size } =
     book;
   const renderContent = () => (
-    <View style={{ flexDirection: "row" }}>
+    <View style={{ flexDirection: "row", marginLeft: 10 }}>
       <MetaInfoDetails top={"GENRE"} icon bottom={genre} />
       <MetaInfoDetails
         top={"SORTIE"}

@@ -1,15 +1,6 @@
 import React from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  FlatList,
-  Image,
-  ScrollView,
-} from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import { Icon, Divider } from "react-native-elements";
+import { Text, View, TouchableOpacity, FlatList, Image } from "react-native";
+import { Icon } from "react-native-elements";
 
 import { COLORS, SIZES } from "../constants/themes";
 
@@ -167,12 +158,3 @@ const AuthorBooks = ({ data, title }) => {
 };
 
 export default AuthorBooks;
-
-const styles = StyleSheet.create({
-  primaryTitle: {
-    color: COLORS.whiteSmooth,
-    fontSize: SIZES.h2,
-    fontWeight: "bold",
-    textAlign: "left",
-  },
-});

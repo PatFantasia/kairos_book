@@ -18,8 +18,7 @@ const SeeMore = ({ data }) => {
     const renderContent = ({ item }) => (
       <TouchableOpacity
         style={{
-          marginRight: SIZES.padding,
-          borderTopColor: COLORS.lightGray,
+          marginLeft: -35,
         }}
         // onPress={() =>
         //   navigation.navigate("FancyContent", {
@@ -31,7 +30,7 @@ const SeeMore = ({ data }) => {
           source={item.bookCover}
           resizeMode="cover"
           style={{
-            width: 360,
+            width: 365,
             height: 200,
             borderRadius: 20,
             marginVertical: 15,
@@ -44,16 +43,12 @@ const SeeMore = ({ data }) => {
       </TouchableOpacity>
     );
     return (
-      <View>
-        <LinearGradient
-          colors={[COLORS.gray, COLORS.black]}
-          //   style={{ flex: 1, borderRadius: 20, opacity: 0.1 }}
-        >
+      <View style={{ marginTop: 40 }}>
+        <LinearGradient colors={[COLORS.gray, COLORS.black]}>
           <View
             style={{
-              marginLeft: 5,
+              marginLeft: 15,
               marginTop: 30,
-              // marginBottom: 5,
               height: 30,
               width: 310,
             }}
@@ -81,7 +76,7 @@ export default SeeMore;
 
 const styles = StyleSheet.create({
   primaryTitle: {
-    color: COLORS.whiteSmooth,
+    color: COLORS.white,
     fontSize: SIZES.h2,
     fontWeight: "bold",
     textAlign: "left",

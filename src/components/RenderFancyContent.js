@@ -6,10 +6,9 @@ import {
   TouchableOpacity,
   FlatList,
   Image,
-  ScrollView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Icon, Divider } from "react-native-elements";
+import { Divider } from "react-native-elements";
 
 import { COLORS, SIZES } from "../constants/themes";
 
@@ -18,16 +17,19 @@ const RenderFancyContent = ({ data, navigation }) => {
     const renderContent = ({ item }) => (
       <TouchableOpacity
         style={{
-          marginRight: SIZES.padding,
+          marginLeft: 15,
           borderTopColor: COLORS.lightGray,
         }}
         onPress={() =>
           navigation.navigate("LibraryItem", {
-            content: item,
+            book: item,
           })
         }
       >
-        <Divider style={{ marginBottom: 35 }} color={COLORS.lightGray} />
+        <Divider
+          style={{ marginBottom: 30, marginTop: 10 }}
+          color={COLORS.lightGray}
+        />
         <View
           style={{
             marginLeft: 5,
@@ -83,13 +85,13 @@ export default RenderFancyContent;
 
 const styles = StyleSheet.create({
   primarySubtitle: {
-    color: COLORS.whiteSmooth,
+    color: COLORS.white,
     fontSize: SIZES.h4,
     fontWeight: "bold",
     textAlign: "left",
   },
   primaryTitle: {
-    color: COLORS.whiteSmooth,
+    color: COLORS.white,
     fontSize: SIZES.h2,
     fontWeight: "bold",
     textAlign: "left",
