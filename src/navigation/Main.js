@@ -37,7 +37,6 @@ const Main = () => {
           },
           headerTitleStyle: {
             color: COLORS.white,
-            fontSize: SIZES.h1,
             fontVariant: "bold",
           },
         }}
