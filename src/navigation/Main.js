@@ -4,13 +4,12 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 
 import Tabs from "./Tabs";
-import { Profile, Bookstore } from "screens";
+import { Profile } from "screens";
 import { OnboardingScreen } from "screens";
 import LibraryItemContent from "components/LibraryItemContent";
 import AccountSetting from "components/AccountSetting";
 import SingUp from "../screens/SingUp";
-import { COLORS, SIZES } from "constants/themes";
-import { BlurView } from "expo-blur";
+import { COLORS } from "constants/themes";
 
 const Stack = createStackNavigator();
 

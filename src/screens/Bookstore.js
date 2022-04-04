@@ -10,11 +10,7 @@ import {
 import { Divider } from "react-native-elements";
 import { COLORS, SIZES } from "../constants/themes";
 // import dummyData from "constants/dummyData";
-import {
-  myBooksData,
-  categoriesData,
-  fancyCategoriesData,
-} from "constants/dummyData";
+import { myBooksData, fancyCategoriesData } from "constants/dummyData";
 import RenderFancyContent from "components/RenderFancyContent";
 import DisplaySection from "components/DisplaySection";
 import DisplayAll from "components/DisplayAll";
