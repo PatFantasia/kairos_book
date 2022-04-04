@@ -1,13 +1,9 @@
-import React from 'react'
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Main from './src/navigation/Main';
+import React from "react";
+import Main from "./src/navigation/Main";
+import LibraryItemContent from "components/LibraryItemContent";
 
 const App = () => {
-  return (
-    <Main/>
-  )
-}
+  return <Main />;
+};
 
-export default App
-const styles = StyleSheet.create({})
+export default App;
