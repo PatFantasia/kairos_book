@@ -35,6 +35,7 @@ const Bookstore = ({ navigation }) => {
         <View style={{ height: 380, top: -150 }}>
           <RenderFancyContent data={fancyCategories} />
         </View>
+        <RenderFancyContent data={fancyCategories} navigation={navigation} />
 
         <View style={{ height: 550, top: -150 }}>
           <RenderTrendContent data={bookData} />
