@@ -1,10 +1,17 @@
 import React from "react";
 import { Text, View, TouchableOpacity, FlatList, Image } from "react-native";
-import { Icon } from "react-native-elements";
+import { Icon, Divider } from "react-native-elements";
 
 import { COLORS, SIZES } from "../constants/themes";
 
-const AuthorBooks = ({ data, title }) => {
+const AuthorBooks = ({
+  data,
+  bookInfo,
+  title,
+  audiobook,
+  specialCatagory,
+  customStyle,
+}) => {
   const header = () => (
     <View
       style={{
@@ -13,7 +20,7 @@ const AuthorBooks = ({ data, title }) => {
         bottom: 5,
       }}
     >
-      <TouchableOpacity style={{ marginLeft: -45 }}>
+      <TouchableOpacity style={[{ marginLeft: -45 }, customStyle]}>
         <Text
           style={{
             color: COLORS.white,
@@ -33,8 +40,11 @@ const AuthorBooks = ({ data, title }) => {
             textAlign: "left",
           }}
         >
-          {" "}
-          {data[0].author}{" "}
+          {specialCatagory
+            ? specialCatagory
+            : audiobook
+            ? " de : " + bookInfo.author
+            : bookInfo.author}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity style={{ flexDirection: "row", marginRight: -35 }}>
@@ -80,7 +90,7 @@ const AuthorBooks = ({ data, title }) => {
         }}
       >
         {" "}
-        {data[0].author}{" "}
+        {bookInfo.author}{" "}
       </Text>
       <View
         style={{
@@ -94,7 +104,7 @@ const AuthorBooks = ({ data, title }) => {
       >
         <Text style={{ color: COLORS.white, fontSize: SIZES.h3 }}>
           {" "}
-          {item.price}
+          {audiobook ? "8000" : item.price}
           {" FCFA "}
         </Text>
       </View>
@@ -114,20 +124,36 @@ const AuthorBooks = ({ data, title }) => {
         //   })
         // }
       >
-        <Image
-          source={item.bookCover}
-          resizeMode="cover"
-          style={{
-            width: 180,
-            height: 250,
-            borderRadius: 5,
-            marginVertical: 15,
-            justifyContent: "center",
-            alignSelf: "center",
-          }}
-          blurRadius={5}
-        />
-        {footer(item)}
+        {audiobook ? (
+          <Image
+            source={item.bookCover}
+            resizeMode="cover"
+            style={{
+              width: 180,
+              height: 180,
+              borderRadius: 5,
+              marginVertical: 15,
+              justifyContent: "center",
+              alignSelf: "center",
+            }}
+            blurRadius={5}
+          />
+        ) : (
+          <Image
+            source={item.bookCover}
+            resizeMode="cover"
+            style={{
+              width: 180,
+              height: 250,
+              borderRadius: 5,
+              marginVertical: 15,
+              justifyContent: "center",
+              alignSelf: "center",
+            }}
+            blurRadius={5}
+          />
+        )}
+        {!specialCatagory ? footer(item) : null}
       </TouchableOpacity>
     );
     return (
@@ -154,7 +180,15 @@ const AuthorBooks = ({ data, title }) => {
       </>
     );
   };
-  return renderSection(data);
+  return (
+    <>
+      {renderSection(data)}
+      <Divider
+        style={{ marginHorizontal: 15, marginTop: 20 }}
+        color={COLORS.lightGray}
+      />
+    </>
+  );
 };
 
 export default AuthorBooks;

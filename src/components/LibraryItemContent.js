@@ -9,14 +9,13 @@ import {
   ScrollView,
 } from "react-native";
 import { FONTS, COLORS, SIZES, icons } from "constants";
-import { immigritude, myBooksData } from "constants/dummyData";
+import { myBooksData } from "constants/dummyData";
 import { Icon, AirbnbRating, Divider } from "react-native-elements";
 import Resume from "./Resume";
 import BuyItem from "./BuyItem";
 import Options from "./Options";
 import MetaInfo from "./MetaInfo";
 import AuthorBooks from "./AuthorBooks";
-import TypeMenu from "./TypeMenu";
 
 const LibraryItemContent = ({ route, navigation }) => {
   const [book, setBook] = React.useState(null);
@@ -24,6 +23,7 @@ const LibraryItemContent = ({ route, navigation }) => {
   React.useEffect(() => {
     let { book } = route.params;
     setBook(book);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [book]);
 
   function renderBookInfoSection() {
@@ -174,24 +174,99 @@ const LibraryItemContent = ({ route, navigation }) => {
       >
         {/* Book Cover Section */}
         <View style={{ flex: 1 }}>{renderBookInfoSection()}</View>
-        <AuthorBooks data={myBooksData} title={"Plus de livres de : "} />
-        <View style={{ marginLeft: 15, marginVertical: 25 }}>
-          <TouchableOpacity>
-            <Text style={{ fontSize: SIZES.h1, color: COLORS.white }}>
-              {" "}
-              Genres
-            </Text>
-          </TouchableOpacity>
-          <TypeMenu iconName={"typewriter"} bookType="Romans et littératures" />
-          <TypeMenu
-            iconName={"smoking-pipe"}
-            bookType="Policier et suspenses"
+        <AuthorBooks
+          data={myBooksData}
+          bookInfo={book}
+          title={"Plus de livres de : "}
+        />
+        <AuthorBooks
+          data={myBooksData}
+          bookInfo={book}
+          title={"Plus de livres  audio  "}
+          audiobook
+        />
+        <AuthorBooks
+          data={myBooksData}
+          title={"D'autres clients  "}
+          specialCatagory={"ont aussi acheté"}
+          bookInfo={book}
+        />
+        <AuthorBooks
+          data={myBooksData}
+          title={"Meilleures ventes livres :"}
+          specialCatagory={book.genre[0] + " et " + book.genre[1]}
+          bookInfo={book}
+          customStyle={{ marginLeft: -20 }}
+        />
+        <Text
+          style={{
+            fontSize: SIZES.h2,
+            color: COLORS.white,
+            marginTop: 20,
+            marginLeft: 15,
+          }}
+        >
+          {" "}
+          Hisorique des mises à jour
+        </Text>
+        <Text
+          style={{
+            fontSize: SIZES.h4,
+            color: COLORS.white,
+            marginTop: 20,
+            marginLeft: 15,
+          }}
+        >
+          {" "}
+          20 Mars. 2020
+        </Text>
+        <Text style={{ color: COLORS.white, marginTop: 20, marginLeft: 15 }}>
+          {" "}
+          Mises à jour
+        </Text>
+        <Divider style={{ margin: 15 }} color={COLORS.lightGray} />
+
+        <Text
+          style={{
+            fontSize: SIZES.h2,
+            color: COLORS.white,
+            marginTop: 20,
+            marginLeft: 15,
+          }}
+        >
+          {" "}
+          Configuration requise
+        </Text>
+        <Text
+          style={{
+            color: COLORS.white,
+            marginTop: 20,
+            marginLeft: 15,
+          }}
+        >
+          {" "}
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.l
+        </Text>
+        <Divider style={{ margin: 15 }} color={COLORS.lightGray} />
+
+        <TouchableOpacity style={{ flexDirection: "row", marginRight: 15 }}>
+          <Text style={{ color: COLORS.lightGray, marginLeft: 15 }}>
+            {" "}
+            Condiions générales{" "}
+          </Text>
+          <Icon
+            name="keyboard-arrow-right"
+            size={25}
+            color={COLORS.lightGray}
+            style={{ margin: -3 }}
           />
-          <TypeMenu iconName={"candle"} bookType="Religion et spiritualité" />
-          <TypeMenu iconName={"flower-poppy"} bookType="Romance" />
-          <TypeMenu iconName={"lightbulb"} bookType="BD et livre jeunesse " />
-          <TypeMenu iconName={"menu"} bookType="Tous les genres" />
-        </View>
+        </TouchableOpacity>
       </ScrollView>
     );
   } else {
