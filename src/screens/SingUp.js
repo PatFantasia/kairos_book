@@ -92,7 +92,7 @@ const SignInScreen = ({ navigation }) => {
     const userAccount = { username: data.username, password: data.password };
     isCompleted && writeDataToStorage(JSON.stringify(userAccount));
     isCompleted
-      ? navigation.navigate("Tabs")
+      ? navigation.navigate("Library")
       : alert("Vous devez d'abord vous inscrire !");
   };
   return (
