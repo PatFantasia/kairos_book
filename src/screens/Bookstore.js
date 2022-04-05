@@ -17,6 +17,7 @@ import DisplayAll from "components/DisplayAll";
 import RenderTrendContent from "components/RenderTrendContent";
 import RenderByType from "components/RenderByType";
 import SeeMore from "components/SeeMore";
+import TypeMenuBox from "../components/TypeMenuBox";
 
 const Bookstore = ({ navigation }) => {
   const [bookData, setBookData] = useState(myBooksData);
@@ -50,6 +51,7 @@ const Bookstore = ({ navigation }) => {
         <RenderByType data={bookData} />
 
         <SeeMore data={bookData} />
+        <TypeMenuBox />
       </ScrollView>
     </SafeAreaView>
   );
