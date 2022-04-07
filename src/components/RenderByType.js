@@ -6,10 +6,8 @@ import {
   TouchableOpacity,
   FlatList,
   Image,
-  ScrollView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Icon, Divider } from "react-native-elements";
 
 import { COLORS, SIZES } from "../constants/themes";
 
@@ -44,15 +42,11 @@ const RenderByType = ({ data, navigation }) => {
     );
     return (
       <View style={{ marginTop: 25 }}>
-        <LinearGradient
-          colors={[COLORS.gray, COLORS.black]}
-          //   style={{ flex: 1, borderRadius: 20, opacity: 0.1 }}
-        >
+        <LinearGradient colors={[COLORS.gray, COLORS.black]}>
           <View
             style={{
               marginLeft: 15,
               marginTop: 30,
-              // marginBottom: 5,
               height: 30,
               width: 310,
             }}

@@ -9,7 +9,6 @@ import {
   ScrollView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Icon, Divider } from "react-native-elements";
 
 import { COLORS, SIZES } from "../constants/themes";
 
@@ -33,7 +32,6 @@ const RenderTrendContent = ({ data, navigation }) => {
           style={{
             width: 120,
             height: 200,
-            // borderRadius: 20,
             marginVertical: 15,
             justifyContent: "center",
             alignSelf: "center",
@@ -43,15 +41,11 @@ const RenderTrendContent = ({ data, navigation }) => {
     );
     return (
       <View style={{ marginTop: 40 }}>
-        <LinearGradient
-          colors={[COLORS.lightGray, COLORS.black]}
-          //   style={{ flex: 1, borderRadius: 20, opacity: 0.1 }}
-        >
+        <LinearGradient colors={[COLORS.lightGray, COLORS.black]}>
           <View
             style={{
               marginLeft: 15,
               marginTop: 30,
-              // marginBottom: 5,
               height: 30,
               width: 310,
             }}
