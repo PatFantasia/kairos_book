@@ -13,6 +13,7 @@ export const le_mal_d_aimer = require("../../assets/images/le_mal_d_aimer.jpg");
 export const les_serveuses_de_fatasmes = require("../../assets/images/les_serveuses_de_fatasmes.jpg");
 export const plus_de_noel_pour_etewutulu = require("../../assets/images/plus_de_noel_pour_etewutu.jpg");
 export const tremblement_de_corps = require("../../assets/images/tremblement_de_corps.jpg");
+export const favoritesBooks = require("../../assets/images/favoritesBooks.jpg");
 
 export default {
   onboardingPicture_one,
@@ -28,4 +29,5 @@ export default {
   les_serveuses_de_fatasmes,
   plus_de_noel_pour_etewutulu,
   tremblement_de_corps,
+  favoritesBooks,
 };
