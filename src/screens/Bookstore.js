@@ -10,7 +10,11 @@ import {
 import { Divider } from "react-native-elements";
 import { COLORS, SIZES } from "../constants/themes";
 // import dummyData from "constants/dummyData";
-import { myBooksData, fancyCategoriesData } from "constants/dummyData";
+import {
+  myBooksData,
+  fancyCategoriesData,
+  categoriesData,
+} from "constants/dummyData";
 import RenderFancyContent from "components/RenderFancyContent";
 import DisplaySection from "components/DisplaySection";
 import DisplayAll from "components/DisplayAll";
@@ -18,9 +22,14 @@ import RenderTrendContent from "components/RenderTrendContent";
 import RenderByType from "components/RenderByType";
 import SeeMore from "components/SeeMore";
 import TypeMenuBox from "../components/TypeMenuBox";
+import ComingSoon from "../components/ComingSoon";
+import Copyright from "../components/Copyright";
+import BestSellers from "../components/BestSellers";
+import OurFavorites from "../components/OurFavorites";
 
 const Bookstore = ({ navigation }) => {
   const [bookData, setBookData] = useState(myBooksData);
+  const [bookCategories, setBookCategories] = useState(categoriesData);
   const [fancyCategories, setFancyCategories] = useState(fancyCategoriesData);
   return (
     <SafeAreaView style={styles.container}>
@@ -51,7 +60,11 @@ const Bookstore = ({ navigation }) => {
         <RenderByType data={bookData} />
 
         <SeeMore data={bookData} />
+        <OurFavorites />
+        <ComingSoon data={bookCategories} />
+        <BestSellers />
         <TypeMenuBox />
+        <Copyright data={bookData} />
       </ScrollView>
     </SafeAreaView>
   );
