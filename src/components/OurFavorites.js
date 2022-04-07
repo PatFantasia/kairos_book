@@ -4,12 +4,8 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
-  FlatList,
-  Image,
-  ScrollView,
   ImageBackground,
 } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 import { Icon } from "react-native-elements";
 import { COLORS, SIZES } from "../constants/themes";
 import images from "constants/images";
@@ -20,28 +16,15 @@ const OurFavorites = ({ data, navigation }) => {
       <View
         style={{
           marginTop: 40,
-          backgroundColor: "red",
           top: -100,
         }}
       >
-        {/* <LinearGradient colors={[COLORS.lightGray, COLORS.black]}> */}
-        {/* <ImageBackground
-            source={favoritesBooks}
-            resizeMode="cover"
-            style={{
-              flex: 1,
-              justifyContent: "center",
-              height: 300,
-              width: 310,
-            }}
-          > */}
         <View
           style={{
-            marginLeft: 15,
-            // marginTop: 30,
+            // marginLeft: -15,
+            paddingTop: 25,
             height: 100,
             width: 310,
-            //   backgroundColor: "blue",
           }}
         >
           <Text style={styles.primaryTitle}> Nos coups de c&oelig;ur </Text>
@@ -50,10 +33,20 @@ const OurFavorites = ({ data, navigation }) => {
             Les livres que nous vous conseillons de lire absolument{" "}
           </Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            flexDirection: "row",
+            borderRadius: 25,
+            backgroundColor: COLORS.lightGray3,
+            width: 230,
+            marginLeft: -15,
+
+            paddingVertical: 8,
+          }}
+        >
           <Text
             style={{
-              color: COLORS.lightGray,
+              color: COLORS.white,
               marginLeft: 15,
               fontSize: SIZES.h3,
             }}
@@ -64,12 +57,10 @@ const OurFavorites = ({ data, navigation }) => {
           <Icon
             name="keyboard-arrow-right"
             size={25}
-            color={COLORS.lightGray}
+            color={COLORS.white}
             style={{ margin: -3 }}
           />
         </TouchableOpacity>
-        {/* </ImageBackground> */}
-        {/* </LinearGradient> */}
       </View>
     );
   };
@@ -96,15 +87,17 @@ export default OurFavorites;
 
 const styles = StyleSheet.create({
   secondarySubtitle: {
-    color: COLORS.lightGray2,
+    color: COLORS.lightGray4,
     fontSize: SIZES.h4,
     fontWeight: "bold",
     textAlign: "left",
+    marginLeft: -15,
   },
   primaryTitle: {
-    color: COLORS.whiteSmooth,
+    color: COLORS.white,
     fontSize: SIZES.h2,
     fontWeight: "bold",
     textAlign: "left",
+    marginLeft: -15,
   },
 });
