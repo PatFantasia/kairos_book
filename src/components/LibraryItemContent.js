@@ -16,6 +16,8 @@ import BuyItem from "./BuyItem";
 import Options from "./Options";
 import MetaInfo from "./MetaInfo";
 import AuthorBooks from "./AuthorBooks";
+import Copyright from "./Copyright";
+import UpdateInfo from "./UpdateInfo";
 
 const LibraryItemContent = ({ route, navigation }) => {
   const [book, setBook] = React.useState(null);
@@ -198,75 +200,8 @@ const LibraryItemContent = ({ route, navigation }) => {
           bookInfo={book}
           customStyle={{ marginLeft: -20 }}
         />
-        <Text
-          style={{
-            fontSize: SIZES.h2,
-            color: COLORS.white,
-            marginTop: 20,
-            marginLeft: 15,
-          }}
-        >
-          {" "}
-          Hisorique des mises à jour
-        </Text>
-        <Text
-          style={{
-            fontSize: SIZES.h4,
-            color: COLORS.white,
-            marginTop: 20,
-            marginLeft: 15,
-          }}
-        >
-          {" "}
-          20 Mars. 2020
-        </Text>
-        <Text style={{ color: COLORS.white, marginTop: 20, marginLeft: 15 }}>
-          {" "}
-          Mises à jour
-        </Text>
-        <Divider style={{ margin: 15 }} color={COLORS.lightGray} />
-
-        <Text
-          style={{
-            fontSize: SIZES.h2,
-            color: COLORS.white,
-            marginTop: 20,
-            marginLeft: 15,
-          }}
-        >
-          {" "}
-          Configuration requise
-        </Text>
-        <Text
-          style={{
-            color: COLORS.white,
-            marginTop: 20,
-            marginLeft: 15,
-          }}
-        >
-          {" "}
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.l
-        </Text>
-        <Divider style={{ margin: 15 }} color={COLORS.lightGray} />
-
-        <TouchableOpacity style={{ flexDirection: "row", marginRight: 15 }}>
-          <Text style={{ color: COLORS.lightGray, marginLeft: 15 }}>
-            {" "}
-            Condiions générales{" "}
-          </Text>
-          <Icon
-            name="keyboard-arrow-right"
-            size={25}
-            color={COLORS.lightGray}
-            style={{ margin: -3 }}
-          />
-        </TouchableOpacity>
+        <UpdateInfo />
+        <Copyright />
       </ScrollView>
     );
   } else {
