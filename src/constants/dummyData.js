@@ -302,6 +302,16 @@ export const categoriesData = [
     categoryName: "Bientôt Disponible",
     books: [bookTheTinyDragon, les_serveuses_de_fatasmes, bookUnderland],
   },
+  {
+    id: 4,
+    categoryName: "Payant",
+    books: [bookTheTinyDragon, les_serveuses_de_fatasmes, bookUnderland],
+  },
+  {
+    id: 5,
+    categoryName: "Gratuit",
+    books: [j_ai_peche, bookTheMetropolis, immigritude],
+  },
 ];
 export const fancyCategoriesData = [
   {
