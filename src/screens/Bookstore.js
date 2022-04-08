@@ -26,6 +26,8 @@ import ComingSoon from "../components/ComingSoon";
 import Copyright from "../components/Copyright";
 import BestSellers from "../components/BestSellers";
 import OurFavorites from "../components/OurFavorites";
+import RecommendedForYou from "../components/RecommendedForYou";
+import RankingBook from "../components/RankingBook";
 
 const Bookstore = ({ navigation }) => {
   const [bookData, setBookData] = useState(myBooksData);
@@ -58,7 +60,13 @@ const Bookstore = ({ navigation }) => {
         <DisplayAll />
 
         <RenderByType data={bookData} />
-
+        <RankingBook />
+        <RecommendedForYou data={bookData} />
+        <Divider
+          style={{ marginHorizontal: 15, top: -15 }}
+          color={COLORS.lightGray}
+        />
+        <DisplayAll customStyle={{ top: -15 }} />
         <SeeMore data={bookData} />
         <OurFavorites />
         <ComingSoon data={bookCategories} />
