@@ -6,10 +6,7 @@ import { COLORS, SIZES } from "../constants/themes";
 
 const ComingSoon = ({
   data,
-  bookInfo,
-  title,
-  audiobook,
-  specialCatagory,
+
   customStyle,
 }) => {
   const header = () => (
@@ -113,7 +110,7 @@ const ComingSoon = ({
     );
   };
   return (
-    <>
+    <View style={{ marginTop: -30 }}>
       {header()}
       {renderSection(data)}
       <Divider
@@ -121,7 +118,7 @@ const ComingSoon = ({
         color={COLORS.lightGray}
       />
       {footer()}
-    </>
+    </View>
   );
 };
 

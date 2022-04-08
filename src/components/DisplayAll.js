@@ -3,10 +3,10 @@ import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Icon } from "react-native-elements";
 
 import { COLORS, FONTS } from "../constants/themes";
-const DisplayAll = () => {
+const DisplayAll = ({ customStyle, title }) => {
   const displayListOfTopics = () => {
     return (
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={[styles.container, customStyle]}>
         <Text
           style={{
             ...FONTS.h3,
@@ -15,8 +15,7 @@ const DisplayAll = () => {
             marginVertical: 10,
           }}
         >
-          {" "}
-          Tout afficher{""}
+          {title ? title : "Tout afficher"}
         </Text>
         <Icon
           name="keyboard-arrow-right"

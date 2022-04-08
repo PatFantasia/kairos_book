@@ -74,6 +74,7 @@ const OurFavorites = ({ data, navigation }) => {
         justifyContent: "center",
         alignItems: "center",
         marginHorizontal: 5,
+        marginTop: 15,
         height: 300,
         width: 400,
       }}

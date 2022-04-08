@@ -1,8 +1,9 @@
 import React from "react";
 import { Text, View, TouchableOpacity, FlatList, Image } from "react-native";
-import { Icon, Divider } from "react-native-elements";
+import { Divider } from "react-native-elements";
 
 import { COLORS, SIZES } from "../constants/themes";
+import DisplayAll from "./DisplayAll";
 
 const AuthorBooks = ({
   data,
@@ -48,17 +49,8 @@ const AuthorBooks = ({
         </Text>
       </TouchableOpacity>
       <TouchableOpacity style={{ flexDirection: "row", marginRight: -35 }}>
-        <Text
-          style={{ color: COLORS.white, marginLeft: -12, fontSize: SIZES.h3 }}
-        >
-          {" "}
-          Tout afficher{" "}
-        </Text>
-        <Icon
-          name="keyboard-arrow-right"
-          size={25}
-          color={COLORS.lightGray}
-          style={{ marginLeft: -2 }}
+        <DisplayAll
+          customStyle={{ marginHorizontal: -95, marginVertical: -10, top: -10 }}
         />
       </TouchableOpacity>
     </View>
