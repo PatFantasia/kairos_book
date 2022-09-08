@@ -4,7 +4,7 @@ import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 
 import { Bookstore } from "screens";
 
-import LibraryItemContent from "components/LibraryItemContent";
+import LibraryItemContent from "components/high-components/LibraryItemContent";
 import { COLORS } from "constants/themes";
 
 const Stack = createStackNavigator();
