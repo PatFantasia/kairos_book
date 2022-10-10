@@ -14,6 +14,10 @@ export const les_serveuses_de_fatasmes = require("../../assets/images/les_serveu
 export const plus_de_noel_pour_etewutulu = require("../../assets/images/plus_de_noel_pour_etewutu.jpg");
 export const tremblement_de_corps = require("../../assets/images/tremblement_de_corps.jpg");
 export const favoritesBooks = require("../../assets/images/favoritesBooks.jpg");
+export const articles1 = require("../../assets/images/articles1.jpg");
+export const articles2 = require("../../assets/images/articles2.png");
+export const articles3 = require("../../assets/images/articles3.jpg");
+export const articles4 = require("../../assets/images/articles4.jpg");
 
 export default {
   onboardingPicture_one,
@@ -30,4 +34,8 @@ export default {
   plus_de_noel_pour_etewutulu,
   tremblement_de_corps,
   favoritesBooks,
+  articles1,
+  articles2,
+  articles3,
+  articles4,
 };
