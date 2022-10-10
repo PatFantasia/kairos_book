@@ -348,14 +348,86 @@ export const fancyCategoriesData = [
   },
 ];
 
-// export default {
-//   tremblement_de_corps,
-//   bookOtherWordsForHome,
-//   bookTheMetropolis,
-//   bookTheTinyDragon,
-//   bookUnderland,
-//   bookUnderland2,
-//   myBooksData,
-//   categoriesData,
-//   fancyCategoriesData
-// };
+export const bookNews = {
+  idCategory: 1,
+  categoryName: "Sous Les Coulisses",
+  categoryInfo: "Ils l'ont fait...",
+  newsCover: images.articles4,
+  // content:
+  //   "lorem ipsum, De ces deux approches, il est préférable d’opter pour la seconde. Nous ne souhaitons pas exposer les détails de nos données. Nous voulons à la place exprimer nos données  en termes abstraits. Cela ne passe pas simplement par l’emploi d’interfaces et/ou d’accesseurs. Il faut une réflexion sérieuse sur la meilleure manière de représenter les  données contenues dans un objet. La pire solution consiste à ajouter sans discernement",
+  link: immigritude,
+  footerMessage: "Dapachem Cordium Anima mea Dominum",
+};
+export const authorNews = {
+  idCategory: 2,
+  categoryName: "Le Suspects du mois",
+  categoryInfo: "Ils l'ont fait...",
+  newsCover: images.articles1,
+  // content:
+  //   "lorem ipsum, De ces deux approches, il est préférable d’opter pour la seconde. Nous ne souhaitons pas exposer les détails de nos données. Nous voulons à la place exprimer nos données  en termes abstraits. Cela ne passe pas simplement par l’emploi d’interfaces et/ou d’accesseurs. Il faut une réflexion sérieuse sur la meilleure manière de représenter les  données contenues dans un objet. La pire solution consiste à ajouter sans discernement",
+  link: bookTheMetropolis,
+  footerMessage: "Dapachem Cordium Anima mea Dominum",
+};
+export const challengeNews = {
+  idCategory: 3,
+  categoryName: "Concours Plumes d'Or",
+  categoryInfo: "Révélez l'écrivain en vous...",
+  newsCover: images.articles2,
+  content:
+    "lorem ipsum, De ces deux approches, il est préférable d’opter pour la seconde. Nous ne souhaitons pas exposer les détails de nos données. Nous voulons à la place exprimer nos données  en termes abstraits. Cela ne passe pas simplement par l’emploi d’interfaces et/ou d’accesseurs. Il faut une réflexion sérieuse sur la meilleure manière de représenter les  données contenues dans un objet. La pire solution consiste à ajouter sans discernement",
+  link: les_serveuses_de_fatasmes,
+  footerMessage: "Dapachem Cordium Anima mea Dominum",
+};
+export const fancyNews = {
+  idCategory: 4,
+  categoryName: "Lorem Ipsum Verbum",
+  categoryInfo: "Ils l'ont fait...",
+  newsCover: images.articles3,
+  content:
+    "lorem ipsum, De ces deux approches, il est préférable d’opter pour la seconde. Nous ne souhaitons pas exposer les détails de nos données. Nous voulons à la place exprimer nos données  en termes abstraits. Cela ne passe pas simplement par l’emploi d’interfaces et/ou d’accesseurs. Il faut une réflexion sérieuse sur la meilleure manière de représenter les  données contenues dans un objet. La pire solution consiste à ajouter sans discernement",
+  link: j_ai_peche,
+  footerMessage: "Dapachem Cordium Anima mea Dominum",
+};
+
+export const newsData = [
+  {
+    idCategory: 1,
+    categoryName: "Sous Les Coulisses",
+    categoryInfo: "Ils l'ont fait...",
+    newsCover: images.articles4,
+    content:
+      "lorem ipsum, De ces deux approches, il est préférable d’opter pour la seconde. Nous ne souhaitons pas exposer les détails de nos données. Nous voulons à la place exprimer nos données  en termes abstraits. Cela ne passe pas simplement par l’emploi d’interfaces et/ou d’accesseurs. Il faut une réflexion sérieuse sur la meilleure manière de représenter les  données contenues dans un objet. La pire solution consiste à ajouter sans discernement",
+    link: immigritude,
+    footerMessage: "Dapachem Cordium Anima mea Dominum",
+  },
+  {
+    idCategory: 2,
+    categoryName: "Le Suspects du mois",
+    categoryInfo: "Ils l'ont fait...",
+    newsCover: images.articles1,
+    content:
+      "lorem ipsum, De ces deux approches, il est préférable d’opter pour la seconde. Nous ne souhaitons pas exposer les détails de nos données. Nous voulons à la place exprimer nos données  en termes abstraits. Cela ne passe pas simplement par l’emploi d’interfaces et/ou d’accesseurs. Il faut une réflexion sérieuse sur la meilleure manière de représenter les  données contenues dans un objet. La pire solution consiste à ajouter sans discernement",
+    link: bookTheMetropolis,
+    footerMessage: "Dapachem Cordium Anima mea Dominum",
+  },
+  {
+    idCategory: 3,
+    categoryName: "Concours Plumes d'Or",
+    categoryInfo: "Révélez l'écrivain en vous...",
+    newsCover: images.articles2,
+    content:
+      "lorem ipsum, De ces deux approches, il est préférable d’opter pour la seconde. Nous ne souhaitons pas exposer les détails de nos données. Nous voulons à la place exprimer nos données  en termes abstraits. Cela ne passe pas simplement par l’emploi d’interfaces et/ou d’accesseurs. Il faut une réflexion sérieuse sur la meilleure manière de représenter les  données contenues dans un objet. La pire solution consiste à ajouter sans discernement",
+    link: les_serveuses_de_fatasmes,
+    footerMessage: "Dapachem Cordium Anima mea Dominum",
+  },
+  {
+    idCategory: 4,
+    categoryName: "Lorem Ipsum Verbum",
+    categoryInfo: "Ils l'ont fait...",
+    newsCover: images.articles3,
+    content:
+      "lorem ipsum, De ces deux approches, il est préférable d’opter pour la seconde. Nous ne souhaitons pas exposer les détails de nos données. Nous voulons à la place exprimer nos données  en termes abstraits. Cela ne passe pas simplement par l’emploi d’interfaces et/ou d’accesseurs. Il faut une réflexion sérieuse sur la meilleure manière de représenter les  données contenues dans un objet. La pire solution consiste à ajouter sans discernement",
+    link: j_ai_peche,
+    footerMessage: "Dapachem Cordium Anima mea Dominum",
+  },
+];
