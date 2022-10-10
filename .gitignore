@@ -1,4 +1,6 @@
-node_modules/
+# Expo
+__generated__
+bare-apps
 .expo/
 dist/
 npm-debug.*
@@ -10,5 +12,20 @@ npm-debug.*
 *.orig.*
 web-build/
 .draft
+
 # macOS
 .DS_Store
+*.mobileprovision
+*.orig.*
+web-build/
+.draft
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# VSCode
+.history/
