@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from "react-native";
 import { Divider } from "react-native-elements";
-import { COLORS, SIZES } from "../constants/themes";
+import { COLORS, SIZES } from "constants/themes";
 // import dummyData from "constants/dummyData";
 import {
   myBooksData,
@@ -21,13 +21,13 @@ import DisplayAll from "components/low-components/DisplayAll";
 import RenderTrendContent from "components/low-components/RenderTrendContent";
 import RenderByType from "components/low-components/RenderByType";
 import SeeMore from "components/low-components/SeeMore";
-import ComingSoon from "../components/low-components/ComingSoon";
-import Copyright from "../components/low-components/Copyright";
-import OurFavorites from "../components/low-components/OurFavorites";
-import RecommendedForYou from "../components/low-components/RecommendedForYou";
-import TypeMenuBox from "../components/middle-components/TypeMenuBox";
-import BestSellers from "../components/high-components/BestSellers";
-import RankingBook from "../components/high-components/RankingBook";
+import ComingSoon from "components/low-components/ComingSoon";
+import Copyright from "components/low-components/Copyright";
+import OurFavorites from "components/low-components/OurFavorites";
+import RecommendedForYou from "components/low-components/RecommendedForYou";
+import TypeMenuBox from "components/middle-components/TypeMenuBox";
+import BestSellers from "components/high-components/BestSellers";
+import RankingBook from "components/high-components/RankingBook";
 
 const Bookstore = ({ navigation }) => {
   const [bookData, setBookData] = useState(myBooksData);
