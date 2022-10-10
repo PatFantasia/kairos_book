@@ -1,26 +1,33 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AccountSetting from "components/low-components/AccountSetting";
-import { COLORS } from "constants/themes";
+import Main from "./Main";
+
 import { Icon } from "react-native-elements";
 
 import { News } from "screens";
 import { Library } from "screens";
+import { Bookstore } from "screens";
 import { Audiobook } from "screens";
 import { Search } from "screens";
-import BookstoreStack from "./BookstoreStack";
-import NewsStack from "./NewsStack";
+import { COLORS } from "constants";
 
-const Tab = createBottomTabNavigator();
+export type TabRouteParams = {
+  News: undefined;
+  Library: undefined;
+  Bookstore: undefined;
+  Audiobook: undefined;
+  Search: undefined;
+};
+const Tab = createBottomTabNavigator<TabRouteParams>();
 const config = {
-  NewsStack: { name: "article", type: "materialicons" },
+  News: { name: "article", type: "materialicons" },
   Library: { name: "local-library", type: "materialicons" },
-  BookstoreStack: { name: "storefront", type: "materialcommunityicons" },
+  Bookstore: { name: "storefront", type: "materialcommunityicons" },
   Audiobook: { name: "audiotrack", type: "materialicons" },
   Search: { name: "search", type: "ionicons" },
 };
 
-const Main = () => {
+const Tabs = () => {
   return (
     <Tab.Navigator
       initialRouteName="Library"
@@ -42,15 +49,9 @@ const Main = () => {
       })}
     >
       <Tab.Screen
-        name="NewsStack"
-        component={NewsStack}
-        options={{
-          title: "Aujourd'hui",
-          headerBackgroundContainerStyle: {
-            backgroundColor: COLORS.dark,
-            opacity: 0.5,
-          },
-        }}
+        name="News"
+        component={News}
+        options={{ title: "Aujourd'hui" }}
       />
       <Tab.Screen
         name="Library"
@@ -58,8 +59,8 @@ const Main = () => {
         options={{ title: "Bibliothèque" }}
       />
       <Tab.Screen
-        name="BookstoreStack"
-        component={BookstoreStack}
+        name="Bookstore"
+        component={Bookstore}
         options={{ title: "Librairie" }}
       />
       <Tab.Screen
@@ -76,4 +77,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Tabs;
