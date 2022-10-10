@@ -1,21 +1,26 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState, useEffect } from "react";
+import { StyleSheet, Text, View, LogBox } from "react-native";
 import { Divider } from "react-native-elements";
 import { Icon } from "react-native-elements";
-import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, TouchableOpacity } from "react-native";
 
 import { COLORS, SIZES } from "constants/themes";
-import DisplaySection from "../components/low-components/DisplaySection";
+import DisplaySection from "components/low-components/DisplaySection";
 import { myBooksData } from "constants/dummyData";
 import LibraryBookStore from "components/middle-components/LibraryBookStore";
-import LibraryBookStoreLite from "../components/middle-components/LibraryBookStoreLite";
+import LibraryBookStoreLite from "components/middle-components/LibraryBookStoreLite";
 
 const Library = () => {
   const [bookData, setBookData] = useState(myBooksData);
   const [switchMenu, setSwitchMenu] = useState(false);
   const onPress = () => setSwitchMenu(!switchMenu);
+  useEffect(() => {
+    // You can use ScrollView with "react-native-virtualized-view" to fix it, but it have side effect
+    // This Error can't break the code while scrollEnabled will be false in Flat list.
+    LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
+  }, []);
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ top: 50 }} showsHorizontalScrollIndicator={false}>
@@ -114,9 +119,7 @@ const Library = () => {
         ) : (
           <LibraryBookStore data={bookData} />
         )}
-        {/* <LibraryBookStore data={bookData} /> */}
         <View style={{ marginVertical: 80 }}></View>
-        {/* <LibraryBookStoreLite data={bookData} /> */}
       </ScrollView>
     </SafeAreaView>
   );
