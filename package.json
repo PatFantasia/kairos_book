@@ -20,6 +20,7 @@
     "expo-blur": "~11.0.0",
     "expo-linear-gradient": "~11.0.3",
     "expo-status-bar": "~1.2.0",
+    "lodash": "^4.17.21",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
@@ -52,5 +53,8 @@
     "prettier": "^2.6.0",
     "typescript": "~4.3.5"
   },
-  "private": true
+  "private": true,
+  "repository": "git@github.com:PatFantasia/kairos_book.git",
+  "author": "PatFantasia <desouza.paatrice@gmail.com>",
+  "license": "MIT"
 }
