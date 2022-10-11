@@ -9,9 +9,9 @@ import {
   ScrollView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Icon, Divider } from "react-native-elements";
+import { Icon, Divider } from "@rneui/themed";
 
-import { COLORS, SIZES } from "../../constants/themes";
+import { COLORS, SIZES } from "constants/themes";
 
 const SeeMore = ({ data }) => {
   const renderSection = (data) => {

@@ -4,7 +4,9 @@ import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 
 import { Library, OnboardingScreen } from "screens";
 
-import SingUp from "../screens/SingUp";
+import SignIn from "components/low-components/SingIn";
+import SingUp from "components/low-components/SingUp";
+import ForgottenPassword from "components/low-components/ForgottenPassword";
 import { COLORS } from "constants/themes";
 
 const Stack = createStackNavigator();
@@ -48,12 +50,32 @@ const Authentification = (onboarding, auth) => {
             component={SingUp}
             options={{ headerShown: false }}
           />
+          <Stack.Screen
+            name="SingIn"
+            component={SignIn}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ForgottenPassword"
+            component={ForgottenPassword}
+            options={{ headerShown: false }}
+          />
         </Stack.Group>
       ) : !auth ? (
         <Stack.Group>
           <Stack.Screen
             name="SingUp"
             component={SingUp}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SingIn"
+            component={SignIn}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ForgottenPassword"
+            component={ForgottenPassword}
             options={{ headerShown: false }}
           />
         </Stack.Group>

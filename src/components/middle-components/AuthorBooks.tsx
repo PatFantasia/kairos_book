@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, View, TouchableOpacity, FlatList, Image } from "react-native";
-import { Divider } from "react-native-elements";
+import { Divider } from "@rneui/themed";
 
-import { COLORS, SIZES } from "../../constants/themes";
-import DisplayAll from "../low-components/DisplayAll";
+import { COLORS, SIZES } from "constants/themes";
+import DisplayAll from "components/low-components/DisplayAll";
 
 interface Props {
   data: object;

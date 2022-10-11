@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 import { COLORS, SIZES } from "constants/themes";
-import { Divider } from "react-native-elements";
+import { Divider } from "@rneui/themed";
 import flatten from "lodash/flatten";
 
 import { newsData } from "constants/dummyData";

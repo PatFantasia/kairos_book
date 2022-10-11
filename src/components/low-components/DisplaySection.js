@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
-import { Icon } from "react-native-elements";
+import { Icon } from "@rneui/themed";
 
-import { COLORS, FONTS, SIZES } from "../../constants/themes";
+import { COLORS, FONTS, SIZES } from "constants/themes";
 
 const DisplaySection = ({ title }) => {
   const displayListOfTopics = () => {

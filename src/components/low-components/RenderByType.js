@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-import { COLORS, SIZES } from "../../constants/themes";
+import { COLORS, SIZES } from "constants/themes";
 
 const RenderByType = ({ data, navigation }) => {
   const renderSection = (data) => {

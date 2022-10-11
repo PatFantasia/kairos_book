@@ -7,7 +7,7 @@ import {
   StatusBar,
   ScrollView,
 } from "react-native";
-import { Icon } from "react-native-elements";
+import { Icon } from "@rneui/themed";
 import { COLORS, icons } from "constants";
 import NewPassword from "./NewPassword";
 import PhoneVerification from "./PhoneVerification";

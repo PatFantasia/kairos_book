@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { SIZES, COLORS } from "constants/themes";
-import { Icon } from "react-native-elements";
+import { Icon } from "@rneui/themed";
 
 const Options = () => {
   return (

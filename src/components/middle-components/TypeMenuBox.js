@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { COLORS, SIZES } from "constants";
-import TypeMenu from "../low-components/TypeMenu";
+import TypeMenu from "components/low-components/TypeMenu";
 
 const TypeMenuBox = () => {
   return (

@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
-import { Icon } from "react-native-elements";
+import { Icon } from "@rneui/themed";
 
-import { COLORS, SIZES } from "../../constants/themes";
+import { COLORS, SIZES } from "constants/themes";
 import images from "constants/images";
 
 const OurFavorites = ({ data, navigation }) => {

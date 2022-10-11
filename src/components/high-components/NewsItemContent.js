@@ -1,25 +1,17 @@
 import React from "react";
 import {
   View,
-  Text,
   StyleSheet,
   StatusBar,
   TouchableOpacity,
-  Image,
   ScrollView,
   Button,
 } from "react-native";
 
-import { FONTS, COLORS, SIZES, icons } from "constants";
-import { myBooksData } from "constants/dummyData";
-import { Icon, AirbnbRating, Divider } from "react-native-elements";
+import { COLORS, SIZES, icons } from "constants";
+
+import { Icon, Divider } from "@rneui/themed";
 import Resume from "components/low-components/Resume";
-import BuyItem from "components/low-components/BuyItem";
-import Options from "components/low-components/Options";
-import MetaInfo from "components/middle-components/MetaInfo";
-import AuthorBooks from "../middle-components/AuthorBooks";
-import Copyright from "components/low-components/Copyright";
-import UpdateInfo from "components/low-components/UpdateInfo";
 
 const NewsItemContent = ({ navigation, route }) => {
   const [article, setArticle] = React.useState(null);

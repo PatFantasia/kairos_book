@@ -11,9 +11,9 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 
 import images from "constants/images";
-import { COLORS, SIZES } from "../../constants/themes";
+import { COLORS, SIZES } from "constants/themes";
 import { immigritude } from "constants/dummyData";
-import LibraryBookFooter from "../low-components/LibraryBookFooter";
+import LibraryBookFooter from "components/low-components/LibraryBookFooter";
 
 const LibrayBookStore = ({ data, navigation }) => {
   const renderSection = (data) => {

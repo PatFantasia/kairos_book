@@ -10,7 +10,7 @@ import {
   StatusBar,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Icon } from "react-native-elements";
+import { Icon } from "@rneui/themed";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 import PhoneVerification from "./PhoneVerification";
 

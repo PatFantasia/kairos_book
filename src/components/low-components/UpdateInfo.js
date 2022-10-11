@@ -1,6 +1,6 @@
 import { Text } from "react-native";
 import React from "react";
-import { Divider } from "react-native-elements";
+import { Divider } from "@rneui/themed";
 import { COLORS, SIZES } from "constants";
 
 const UpdateInfo = () => {

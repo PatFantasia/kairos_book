@@ -8,9 +8,9 @@ import {
   Image,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Divider } from "react-native-elements";
+import { Divider } from "@rneui/themed";
 
-import { COLORS, SIZES } from "../../constants/themes";
+import { COLORS, SIZES } from "constants/themes";
 
 const RenderFancyContent = ({ data, navigation }) => {
   const renderSection = (data) => {

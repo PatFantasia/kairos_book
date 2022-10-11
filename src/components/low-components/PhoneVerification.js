@@ -8,7 +8,7 @@ import {
   StyleSheet,
   StatusBar,
 } from "react-native";
-import { Icon } from "react-native-elements";
+import { Icon } from "@rneui/themed";
 import { COLORS } from "constants";
 import { LinearGradient } from "expo-linear-gradient";
 const PhoneVerification = ({ navigation }) => {

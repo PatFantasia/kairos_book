@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 import { categoriesData } from "constants/dummyData";
-import { COLORS, SIZES } from "../../constants/themes";
+import { COLORS, SIZES } from "constants/themes";
 import AuthorBooks from "../middle-components/AuthorBooks";
 
 const BestSellers = () => {

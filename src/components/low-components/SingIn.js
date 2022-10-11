@@ -12,7 +12,7 @@ import {
 
 import { COLORS } from "constants/themes";
 import { LinearGradient } from "expo-linear-gradient";
-import { Icon } from "react-native-elements";
+import { Icon } from "@rneui/themed";
 
 // import { AuthContext } from "../components/context";
 

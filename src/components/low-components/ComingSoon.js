@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, View, TouchableOpacity, FlatList, Image } from "react-native";
-import { Icon, Divider } from "react-native-elements";
+import { Icon, Divider } from "@rneui/themed";
 
-import { COLORS, SIZES } from "../../constants/themes";
+import { COLORS, SIZES } from "constants/themes";
 
 const ComingSoon = ({ data, customStyle }) => {
   const header = () => (

@@ -1,7 +1,7 @@
 import React from "react";
 import { TouchableOpacity, Text } from "react-native";
 
-import { Icon } from "react-native-elements";
+import { Icon } from "@rneui/themed";
 
 import { COLORS } from "constants/themes";
 

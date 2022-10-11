@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 import React from "react";
-import { Divider } from "react-native-elements";
+import { Divider } from "@rneui/themed";
 import { COLORS, SIZES } from "constants/themes";
 import DisplayAll from "components/low-components/DisplayAll";
 

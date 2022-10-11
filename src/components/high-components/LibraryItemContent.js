@@ -11,14 +11,14 @@ import {
 
 import { FONTS, COLORS, SIZES, icons } from "constants";
 import { myBooksData } from "constants/dummyData";
-import { Icon, AirbnbRating, Divider } from "react-native-elements";
-import Resume from "../low-components/Resume";
-import BuyItem from "../low-components/BuyItem";
-import Options from "../low-components/Options";
-import MetaInfo from "../middle-components/MetaInfo";
+import { Icon, AirbnbRating, Divider } from "@rneui/themed";
+import Resume from "components/low-components/Resume";
+import BuyItem from "components/low-components/BuyItem";
+import Options from "components/low-components/Options";
+import MetaInfo from "components/middle-components/MetaInfo";
 import AuthorBooks from "../middle-components/AuthorBooks";
-import Copyright from "../low-components/Copyright";
-import UpdateInfo from "../low-components/UpdateInfo";
+import Copyright from "components/low-components/Copyright";
+import UpdateInfo from "components/low-components/UpdateInfo";
 
 const LibraryItemContent = ({ route, navigation }) => {
   const [book, setBook] = React.useState(null);

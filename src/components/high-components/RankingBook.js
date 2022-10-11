@@ -1,10 +1,10 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { Divider } from "react-native-elements";
+import { Divider } from "@rneui/themed";
 
 import { categoriesData } from "constants/dummyData";
-import { COLORS, SIZES } from "../../constants/themes";
-import RankingBox from "../middle-components/RankingBox";
+import { COLORS, SIZES } from "constants/themes";
+import RankingBox from "components/middle-components/RankingBox";
 import { ScrollView } from "react-native-gesture-handler";
 
 const RankingBook = () => {

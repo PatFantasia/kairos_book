@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
-import { Icon } from "react-native-elements";
+import { Icon } from "@rneui/themed";
 
-import { COLORS, FONTS } from "../../constants/themes";
+import { COLORS, FONTS } from "constants/themes";
 const DisplayAll = ({ customStyle, title }) => {
   const displayListOfTopics = () => {
     return (

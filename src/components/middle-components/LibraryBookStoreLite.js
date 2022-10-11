@@ -1,8 +1,8 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
-import { Divider } from "react-native-elements";
-import { COLORS } from "../../constants/themes";
-import LibraryBookFooter from "../low-components/LibraryBookFooter";
+import { Divider } from "@rneui/themed";
+import { COLORS } from "constants/themes";
+import LibraryBookFooter from "components/low-components/LibraryBookFooter";
 
 const LibraryBookStoreLite = ({ data }) => {
   return (

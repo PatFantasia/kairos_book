@@ -10,8 +10,7 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-import images from "constants/images";
-import { COLORS, SIZES } from "../../constants/themes";
+import { COLORS, SIZES } from "constants/themes";
 import { immigritude } from "constants/dummyData";
 
 const RecommendedForYou = ({ data, navigation }) => {

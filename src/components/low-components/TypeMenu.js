@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, StyleSheet, TouchableOpacity, View } from "react-native";
-import { Icon, Divider } from "react-native-elements";
+import { Icon, Divider } from "@rneui/themed";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { COLORS, FONTS } from "../../constants/themes";
+import { COLORS, FONTS } from "constants/themes";
 
 const TypeMenu = ({ iconName, bookType }) => {
   const displayListOfTopics = () => {

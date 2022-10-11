@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, View, SafeAreaView, Text } from "react-native";
-import { Icon, SearchBar, Divider } from "react-native-elements";
+import { Icon, SearchBar, Divider } from "@rneui/themed";
 import { COLORS, SIZES } from "constants/themes";
 
 const Search = () => {

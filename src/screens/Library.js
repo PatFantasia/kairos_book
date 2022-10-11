@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, LogBox } from "react-native";
-import { Divider } from "react-native-elements";
-import { Icon } from "react-native-elements";
+import { Divider } from "@rneui/themed";
+import { Icon } from "@rneui/themed";
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, TouchableOpacity } from "react-native";

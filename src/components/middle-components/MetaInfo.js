@@ -1,8 +1,8 @@
 import React from "react";
 import { View, ScrollView } from "react-native";
 
-import MetaInfoDetails from "../low-components/MetaInfoDetails";
-import { SIZES } from "../../constants/themes";
+import MetaInfoDetails from "components/low-components/MetaInfoDetails";
+import { SIZES } from "constants/themes";
 
 const MetaInfo = ({ book }) => {
   const { genre, release_date, language, pageNo, publishing_house, size } =

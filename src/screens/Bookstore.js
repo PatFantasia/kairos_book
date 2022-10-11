@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import {
-  View,
   Text,
   StyleSheet,
   SafeAreaView,
   StatusBar,
   ScrollView,
 } from "react-native";
-import { Divider } from "react-native-elements";
+import { Divider } from "@rneui/themed";
 import { COLORS, SIZES } from "constants/themes";
-// import dummyData from "constants/dummyData";
+
 import {
   myBooksData,
   fancyCategoriesData,
