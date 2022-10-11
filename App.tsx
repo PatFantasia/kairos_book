@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
 
-export default function App() {
+import Authentification from "./src/navigation/Authentification";
+import Main from "./src/navigation/Main";
+
+const App = () => {
+  const isFirstTime = false;
+  const isLoggedIn = true;
+
   return (
-    <View style={styles.container}>
-      <Text>Welcome to Kairos Book, an awesome books App!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      {isFirstTime || !isLoggedIn ? (
+        <Authentification onboarding={isFirstTime} auth={isLoggedIn} />
+      ) : (
+        <Main />
+      )}
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

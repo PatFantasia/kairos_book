@@ -1,0 +1,59 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+    // "react-native/react-native": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    // "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  // "options": {
+  //   "prettier/prettier": [
+  //     "error",
+  //     {},
+  //     {
+  //       "usePrettierrc": false
+  //     }
+  //   ]
+  // },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "react-native",
+    "prettier",
+    "module-resolver"
+  ],
+  "rules": {
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 1,
+    "react-native/no-inline-styles": 0,
+    "react-native/no-color-literals": 0,
+    "react-native/no-raw-text": 0,
+    "react-native/no-single-element-style-arrays": 1,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "module-resolver/use-alias": 1
+  }
+}
