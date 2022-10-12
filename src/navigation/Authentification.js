@@ -2,10 +2,10 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 
-import { Library, OnboardingScreen } from "screens";
+import { OnboardingScreen } from "screens";
 
 import SignIn from "components/low-components/SingIn";
-import SingUp from "components/low-components/SingUp";
+import SingUp from "components/middle-components/SingUp";
 import ForgottenPassword from "components/low-components/ForgottenPassword";
 import { COLORS } from "constants/themes";
 
