@@ -25,7 +25,7 @@ const LibrayBookStore = ({ data, navigation }) => {
             borderTopColor: COLORS.lightGray,
           }}
           onPress={() =>
-            navigation.navigate("FancyContent", {
+            navigation.navigate("BookstoreItem", {
               book: item,
             })
           }

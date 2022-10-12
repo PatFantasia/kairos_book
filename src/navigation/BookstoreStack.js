@@ -4,7 +4,7 @@ import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 
 import { Bookstore } from "screens";
 
-import LibraryItemContent from "components/high-components/LibraryItemContent";
+import BookstoreItemContent from "components/high-components/BookstoreItemContent";
 import { COLORS } from "constants/themes";
 
 const Stack = createStackNavigator();
@@ -44,8 +44,8 @@ const BookstoreStack = () => {
           options={{ title: "Librairie" }}
         />
         <Stack.Screen
-          name="LibraryItem"
-          component={LibraryItemContent}
+          name="BookstoreItem"
+          component={BookstoreItemContent}
           options={{ headerShown: false, presentation: "modal" }}
         />
       </Stack.Group>
