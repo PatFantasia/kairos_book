@@ -1,11 +1,11 @@
-import Reactotron from "reactotron-react-native";
-import { AsyncStorage } from "@react-native-async-storage/async-storage";
 import { NativeModules } from "react-native";
+import Reactotron from "reactotron-react-native";
+import { reactotronRedux } from "reactotron-redux";
+import { AsyncStorage } from "@react-native-async-storage/async-storage";
 import url from "url";
 
 const { hostname } = url.parse(NativeModules.SourceCode.scriptURL);
-
-Reactotron.setAsyncStorageHandler(AsyncStorage)
+const reactotron = Reactotron.setAsyncStorageHandler(AsyncStorage)
   .configure({
     name: "Kairos Book",
     host: hostname,
@@ -16,4 +16,7 @@ Reactotron.setAsyncStorageHandler(AsyncStorage)
       ignoreUrls: /symbolicate/,
     },
   })
+  .use(reactotronRedux())
   .connect();
+
+export default reactotron;
