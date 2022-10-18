@@ -6,10 +6,12 @@ import {
   TextInput,
   Platform,
   StyleSheet,
+  ScrollView,
 } from "react-native";
 import { Icon } from "@rneui/themed";
-import { COLORS } from "constants";
 import { LinearGradient } from "expo-linear-gradient";
+
+import { COLORS, icons } from "constants";
 
 const PhoneVerification = ({ navigation }) => {
   const [data, setData] = React.useState({
@@ -44,118 +46,175 @@ const PhoneVerification = ({ navigation }) => {
     console.log("Confirme Code ");
   };
   return (
-    <>
-      <View style={[styles.footer, { backgroundColor: COLORS.white }]}>
-        <Text
-          style={[
-            styles.text_footer,
-            {
-              color: COLORS.lightGrey,
-            },
-          ]}
+    <ScrollView
+      contentContainerStyle={{ flexGrow: 1 }}
+      keyboardShouldPersistTaps="handled"
+    >
+      <View style={styles.container}>
+        <TouchableOpacity
+          style={{
+            marginTop: 30,
+            marginHorizontal: 10,
+            alignItems: "flex-end",
+          }}
+          onPress={() => navigation.goBack()}
         >
-          Numéro de téléphone
-        </Text>
-
-        <View style={styles.action}>
           <Icon
-            name="phone"
-            type="feather"
-            color={COLORS.lightGrey}
-            size={20}
+            source={icons.more_icon}
+            name="closecircleo"
+            type="antdesign"
+            color={COLORS.lightGray}
           />
-          <TextInput
-            placeholder="Ex : 67529823"
-            placeholderTextColor="#666666"
-            keyboardType="number-pad"
+        </TouchableOpacity>
+        <View style={styles.header}>
+          <Text style={styles.text_header}>Vérification 🏴‍☠️</Text>
+        </View>
+        <View style={[styles.footer, { backgroundColor: COLORS.white }]}>
+          <Text
             style={[
-              styles.textInput,
+              styles.text_footer,
               {
                 color: COLORS.lightGrey,
               },
             ]}
-            autoCapitalize="none"
-            autoCompleteType="tel"
-            onChangeText={setPhoneNumber}
-            onEndEditing={(e) => handleValidContact(e.nativeEvent.text)}
-          />
-          {data.check_textInputChange ? (
-            <Icon name="check-circle" type="feather" color="green" size={20} />
-          ) : null}
-        </View>
-        {data.isValidConctact ? null : (
-          <Text style={styles.errorMsg}>Au moins 4 caractères</Text>
-        )}
+          >
+            Numéro de téléphone
+          </Text>
 
-        <TouchableOpacity
-          style={[styles.signIn, { marginTop: 20 }]}
-          onPress={sendVerification}
-        >
-          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.signIn}>
+          <View style={styles.action}>
+            <Icon
+              name="phone"
+              type="feather"
+              color={COLORS.lightGrey}
+              size={20}
+            />
+            <TextInput
+              placeholder="Ex : 67529823"
+              placeholderTextColor="#666666"
+              keyboardType="number-pad"
+              style={[
+                styles.textInput,
+                {
+                  color: COLORS.lightGrey,
+                },
+              ]}
+              autoCapitalize="none"
+              autoCompleteType="tel"
+              onChangeText={setPhoneNumber}
+              onEndEditing={(e) => handleValidContact(e.nativeEvent.text)}
+            />
+            {data.check_textInputChange ? (
+              <Icon
+                name="check-circle"
+                type="feather"
+                color="green"
+                size={20}
+              />
+            ) : null}
+          </View>
+          {data.isValidConctact ? null : (
+            <Text style={styles.errorMsg}>Au moins 4 caractères</Text>
+          )}
+
+          <TouchableOpacity
+            style={[styles.signIn, { marginTop: 20 }]}
+            onPress={sendVerification}
+          >
+            <LinearGradient
+              colors={["#08d4c4", "#01ab9d"]}
+              style={styles.signIn}
+            >
+              <Text
+                style={[
+                  styles.textSign,
+                  {
+                    color: "#fff",
+                  },
+                ]}
+              >
+                Vérification
+              </Text>
+            </LinearGradient>
+          </TouchableOpacity>
+
+          <View style={[styles.action, { marginTop: 30 }]}>
+            <Icon
+              name="user"
+              type="feather"
+              color={COLORS.lightGrey}
+              size={20}
+            />
+            <TextInput
+              placeholder="-- -- -- --"
+              placeholderTextColor="#666666"
+              keyboardType="number-pad"
+              style={[
+                styles.textInput,
+                {
+                  color: COLORS.lightGrey,
+                },
+              ]}
+              autoCapitalize="none"
+              autoCompleteType="tel"
+              onChangeText={setCode}
+              onEndEditing={(e) => handleValidContact(e.nativeEvent.text)}
+            />
+            {data.check_textInputChange ? (
+              <Icon
+                name="check-circle"
+                type="feather"
+                color="green"
+                size={20}
+              />
+            ) : null}
+          </View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("SignUp")}
+            style={[
+              styles.signIn,
+              {
+                borderColor: "#009387",
+                borderWidth: 1,
+                marginTop: 15,
+              },
+            ]}
+          >
             <Text
               style={[
                 styles.textSign,
                 {
-                  color: "#fff",
+                  color: "#009387",
                 },
               ]}
             >
-              Vérification
+              Renvoyer le code _ _ : _ _
             </Text>
-          </LinearGradient>
-        </TouchableOpacity>
-
-        <View style={[styles.action, { marginTop: 30 }]}>
-          <Icon name="user" type="feather" color={COLORS.lightGrey} size={20} />
-          <TextInput
-            placeholder="-- -- -- --"
-            placeholderTextColor="#666666"
-            keyboardType="number-pad"
-            style={[
-              styles.textInput,
-              {
-                color: COLORS.lightGrey,
-              },
-            ]}
-            autoCapitalize="none"
-            autoCompleteType="tel"
-            onChangeText={setCode}
-            onEndEditing={(e) => handleValidContact(e.nativeEvent.text)}
-          />
-          {data.check_textInputChange ? (
-            <Icon name="check-circle" type="feather" color="green" size={20} />
-          ) : null}
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("SignUp")}
-          style={[
-            styles.signIn,
-            {
-              borderColor: "#009387",
-              borderWidth: 1,
-              marginTop: 15,
-            },
-          ]}
-        >
-          <Text
-            style={[
-              styles.textSign,
-              {
-                color: "#009387",
-              },
-            ]}
-          >
-            Renvoyer le code _ _ : _ _
-          </Text>
-        </TouchableOpacity>
       </View>
-    </>
+    </ScrollView>
   );
 };
 
 export default PhoneVerification;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexGrow: 1,
+    backgroundColor: "#009387",
+  },
+  header: {
+    flex: 1,
+    justifyContent: "flex-end",
+    paddingHorizontal: 20,
+    paddingBottom: 50,
+  },
+  text_header: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 30,
+  },
   footer: {
     flex: 3,
     backgroundColor: "#fff",
