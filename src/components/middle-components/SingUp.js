@@ -12,7 +12,7 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { Icon } from "@rneui/themed";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
-import PhoneVerification from "./PhoneVerification";
+import PhoneVerification from "components/low-components/PhoneVerification";
 
 const SignInScreen = ({ navigation }) => {
   const [data, setData] = React.useState({

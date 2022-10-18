@@ -6,7 +6,7 @@ export const authSlice = createSlice({
     user: {
       username: " ",
       password: " ",
-      email: " ",
+      confirmPassword: " ",
       phoneNumber: null,
     },
     isOnline: false,

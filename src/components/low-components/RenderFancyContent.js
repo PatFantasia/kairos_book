@@ -21,7 +21,7 @@ const RenderFancyContent = ({ data, navigation }) => {
           borderTopColor: COLORS.lightGray,
         }}
         onPress={() =>
-          navigation.navigate("LibraryItem", {
+          navigation.navigate("BookstoreItem", {
             book: item,
           })
         }

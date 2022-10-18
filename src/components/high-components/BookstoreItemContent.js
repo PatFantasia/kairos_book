@@ -8,18 +8,19 @@ import {
   Image,
   ScrollView,
 } from "react-native";
+
 import { FONTS, COLORS, SIZES, icons } from "constants";
 import { myBooksData } from "constants/dummyData";
-import { Icon, AirbnbRating, Divider } from "react-native-elements";
-import Resume from "./Resume";
-import BuyItem from "./BuyItem";
-import Options from "./Options";
-import MetaInfo from "./MetaInfo";
-import AuthorBooks from "./AuthorBooks";
-import Copyright from "./Copyright";
-import UpdateInfo from "./UpdateInfo";
+import { Icon, AirbnbRating, Divider } from "@rneui/themed";
+import Resume from "components/low-components/Resume";
+import BuyItem from "components/low-components/BuyItem";
+import Options from "components/low-components/Options";
+import MetaInfo from "components/middle-components/MetaInfo";
+import AuthorBooks from "../middle-components/AuthorBooks";
+import Copyright from "components/low-components/Copyright";
+import UpdateInfo from "components/low-components/UpdateInfo";
 
-const LibraryItemContent = ({ route, navigation }) => {
+const BookstoreItemContent = ({ route, navigation }) => {
   const [book, setBook] = React.useState(null);
 
   React.useEffect(() => {
@@ -209,7 +210,7 @@ const LibraryItemContent = ({ route, navigation }) => {
   }
 };
 
-export default LibraryItemContent;
+export default BookstoreItemContent;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

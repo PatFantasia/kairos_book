@@ -12,7 +12,7 @@ module.exports = function (api) {
           constants: "./src/constants",
           screens: "./src/screens",
           components: "./src/components",
-          store: "./src/store",
+          stores: "./src/stores",
           navigation: "./src/navigation",
           services: "./src/services",
         },

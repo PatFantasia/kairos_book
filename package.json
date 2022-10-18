@@ -23,6 +23,8 @@
     "expo-font": "~10.0.4",
     "expo-linear-gradient": "~11.0.3",
     "expo-status-bar": "~1.2.0",
+    "firebase": "^9.12.0",
+    "formik": "^2.2.9",
     "lodash": "^4.17.21",
     "react": "17.0.1",
     "react-dom": "17.0.1",
@@ -33,10 +35,15 @@
     "react-native-screens": "~3.10.1",
     "react-native-vector-icons": "^9.1.0",
     "react-native-web": "0.17.1",
+    "react-redux": "^8.0.4",
+    "reactotron-redux": "^3.1.3",
     "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
     "redux-persist-expo-filesystem": "^2.0.0",
-    "redux-saga": "^1.1.3"
+    "redux-saga": "^1.1.3",
+    "url": "^0.11.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -53,7 +60,12 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-react-native": "^4.0.0",
     "prettier": "^2.6.0",
+    "reactotron-react-native": "^5.0.3",
     "typescript": "~4.3.5"
+  },
+  "resolutions": {
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2"
   },
   "private": true,
   "repository": "git@github.com:PatFantasia/kairos_book.git",
