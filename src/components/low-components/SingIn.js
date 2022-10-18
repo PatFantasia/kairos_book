@@ -189,7 +189,7 @@ const SignIn = ({ navigation }) => {
         <TouchableOpacity>
           <Text
             style={{ color: "#009387", marginTop: 15 }}
-            onPress={() => navigation.navigate("ForgottenPassword")}
+            onPress={() => navigation.navigate("PhoneVerification")}
           >
             Mot de Passe oublié ?
           </Text>
