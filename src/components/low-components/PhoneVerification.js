@@ -7,11 +7,15 @@ import {
   Platform,
   StyleSheet,
   ScrollView,
+  Button,
 } from "react-native";
 import { Icon } from "@rneui/themed";
 import { LinearGradient } from "expo-linear-gradient";
 import firebase from "firebase/app";
-import { FirebaseRecaptchaVerifierModal } from "expo-firebase-recaptcha";
+import {
+  FirebaseRecaptchaVerifierModal,
+  FirebaseRecaptchaBanner,
+} from "expo-firebase-recaptcha";
 
 import { COLORS, icons } from "constants";
 import { firebaseConfig } from "../../../firebase";
@@ -24,16 +28,11 @@ if (!firebase.apps.length) {
 
 const PhoneVerification = ({ navigation }) => {
   const [data, setData] = React.useState({
-    username: "",
-    password: "",
     check_textInputChange: false,
-    secureTextEntry: true,
-    isValidConctact: true,
-    isValidPassword: true,
   });
 
   const handleValidContact = (val) => {
-    if (val.trim().length >= 4) {
+    if (val.trim().length >= 10) {
       setData({
         ...data,
         isValidConctact: true,
@@ -51,24 +50,41 @@ const PhoneVerification = ({ navigation }) => {
   const [verificationId, setVerificationId] = useState(null);
   const recaptchaVerifier = useRef(null);
 
+  const [message, showMessage] = React.useState();
+  const attemptInvisibleVerification = false;
+
   const sendVerification = () => {
-    const phoneProvider = new firebase.auth.PhoneAuthProvider();
-    phoneProvider
-      .verifyPhoneNumber(phoneNumber, recaptchaVerifier.current)
-      .then(setVerificationId);
+    try {
+      const phoneProvider = new firebase.auth.PhoneAuthProvider();
+
+      phoneProvider
+        .verifyPhoneNumber(phoneNumber, recaptchaVerifier.current)
+        .then(setVerificationId);
+      console.log({ verificationId });
+      showMessage({
+        text: "Le code de vérification a été envoyé sur votre téléphone.",
+      });
+    } catch (err) {
+      showMessage({ text: `Error: ${err.message}`, color: "red" });
+    }
   };
   const confirmCode = () => {
-    const credential = firebase.auth.PhoneAuthProvider.credential(
-      verificationId,
-      code
-    );
-    firebase
-      .auth()
-      .signInWithCredential(credential)
-      .then((result) => {
-        // Do something with the results here
-        console.log(result);
-      });
+    try {
+      const credential = firebase.auth.PhoneAuthProvider.credential(
+        verificationId,
+        code
+      );
+      firebase
+        .auth()
+        .signInWithCredential(credential)
+        .then((result) => {
+          // Do something with the results here
+          console.log(result);
+        });
+      showMessage({ text: "Authentification réussi 👍" });
+    } catch (err) {
+      showMessage({ text: `Erreur: ${err.message}`, color: "red" });
+    }
   };
   return (
     <ScrollView
@@ -141,9 +157,6 @@ const PhoneVerification = ({ navigation }) => {
               />
             ) : null}
           </View>
-          {data.isValidConctact ? null : (
-            <Text style={styles.errorMsg}>Au moins 4 caractères</Text>
-          )}
 
           <TouchableOpacity
             style={[styles.signIn, { marginTop: 20 }]}
@@ -174,6 +187,8 @@ const PhoneVerification = ({ navigation }) => {
               size={20}
             />
             <TextInput
+              editable={!!verificationId}
+              // placeholder="123456"
               placeholder="-- -- -- --"
               placeholderTextColor="#666666"
               keyboardType="number-pad"
@@ -198,7 +213,6 @@ const PhoneVerification = ({ navigation }) => {
             ) : null}
           </View>
           <TouchableOpacity
-            onPress={confirmCode}
             style={[
               styles.signIn,
               {
@@ -208,18 +222,18 @@ const PhoneVerification = ({ navigation }) => {
               },
             ]}
           >
-            <Text
-              style={[
-                styles.textSign,
-                {
-                  color: "#009387",
-                },
-              ]}
-            >
-              Renvoyer le code _ _ : _ _
-            </Text>
+            <Button
+              title="Renvoyer le code _ _ : _ _"
+              style={styles.textSign}
+              color="#009387"
+              onPress={confirmCode}
+            />
           </TouchableOpacity>
+          {message ? (
+            <Text style={styles.errorMsg}> {message.text}</Text>
+          ) : undefined}
         </View>
+        {attemptInvisibleVerification && <FirebaseRecaptchaBanner />}
       </View>
     </ScrollView>
   );
