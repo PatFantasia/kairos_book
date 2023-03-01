@@ -8,15 +8,16 @@ export const authSlice = createSlice({
       password: " ",
       confirmPassword: " ",
       phoneNumber: null,
+      validationCode: null,
     },
-    isOnline: false,
+    isLogged: false,
   },
   reducers: {
     setUser: (state, action) => {
       state.user = action.payload;
     },
     setAuth: (state, action) => {
-      state.isOnline = action.payload;
+      state.isLogged = action.payload;
     },
   },
 });

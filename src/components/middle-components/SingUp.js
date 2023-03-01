@@ -77,7 +77,7 @@ const SignInScreen = ({ navigation }) => {
           setTimeout(() => {
             handleNextScreen();
             console.log("good bye");
-          });
+          }, 2000);
         }}
         validationSchema={validationSchema}
       >
